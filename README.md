@@ -3,7 +3,7 @@
 #### By Bryce Bresnan <Bryce.Bresnan@gmail.com>
 #### By Kasidit Srisawat <paulkasidit@gmail.com>
 #### By Paul Srisawat <pault@gmail.com>
-#### By Anthony Gladden <a.gladden360@outlook.com>
+#### By Anthony Gladden <a.gladden360@outlook.com> 
 
 #### Description
 
