@@ -1,6 +1,6 @@
 # Title
 
-#### By Bryce Bresnan <Bryce.Bresnan@gmail.com>
+#### By Bryce Bresnan <Bryce.Bresnan@gmail.com>, Evgeny Zbirun <zbirunzbirun@gmai.com>
 
 #### Description
 
