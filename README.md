@@ -2,7 +2,6 @@
 
 #### By Bryce Bresnan <Bryce.Bresnan@gmail.com>
 #### By Kasidit Srisawat <paulkasidit@gmail.com>
-#### By Paul Srisawat <pault@gmail.com>
 
 #### Description
 
