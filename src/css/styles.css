@@ -2,3 +2,9 @@ body {
   background-color: rgb(213, 72, 72);
   color: rgb(209, 205, 199);
 }
+
+.links {
+  margin: 10px;
+  padding: 10px;
+
+}
