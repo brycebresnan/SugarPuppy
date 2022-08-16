@@ -1,6 +1,8 @@
 # Title
 
 #### By Bryce Bresnan <Bryce.Bresnan@gmail.com>
+#### By Kasidit Srisawat <paulkasidit@gmail.com>
+
 
 #### Description
 
