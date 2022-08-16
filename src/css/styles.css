@@ -1,10 +1,14 @@
 body {
   background-color: rgb(213, 72, 72);
   color: rgb(209, 205, 199);
+  display: flex;
+  justify-content: space-between;
 }
 
-.links {
+.container {
   margin: 10px;
   padding: 10px;
-
+  display: flex;
+  justify-content: space-between;
+  border: 4mm ridge, blue;
 }
