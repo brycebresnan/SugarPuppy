@@ -1,7 +1,9 @@
 export default class Cost { 
 
-  constructor { 
+  constructor {
+
     this.totalCost = 0;  
+
   }
 
   let itemPrices = { //this does not have to be in the class, it can probably be placed outside,
@@ -10,7 +12,9 @@ export default class Cost {
     'vet': 250, 
     'leash': 15, //if you take the dog for a walk you would need to buy a leash 
     'collar': 5
-  }
+  } 
+  
+
   //potentialy could be interlinked with buttons in the UI, we should discuss this
   //during the meeting this Tuesday. 
 
