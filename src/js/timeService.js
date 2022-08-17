@@ -1,6 +1,6 @@
 export default class TimeService {
   
-  static timer(time, event) { 
+  static timer(time, event, day) { 
     const hour = Number(time.split(':')[0]);
     const minute = Number(time.split(':')[1]);
 
@@ -9,10 +9,8 @@ export default class TimeService {
     let now = new Date();
 
     if (eventTime.getTime() < now.getTime()) {
-      eventTime.setHours(eventTime.getHours() + 24);
+      eventTime.setHours(eventTime.getHours() + (24*day));
     }
-
-    //build multi-day accounting. 
 
     const triggerTimeMs = eventTime.getTime() - now.getTime();
     setTimeout(event, triggerTimeMs);
