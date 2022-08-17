@@ -19,7 +19,7 @@ export default class TimeService {
   }
   
   //scale is either 0 no random, 1 for minutes random, or 2 for completely random
-  randomizeTime(time, scale) {
+  static randomizeTime(time, scale) {
     let hour = Number(time.split(':')[0]);
     let minute = Number(time.split(':')[1]);
     const randomValue = Math.random();
