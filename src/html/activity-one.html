@@ -15,11 +15,35 @@
     </span>
     <div id="about">
       <h2>About Activity One:</h2>
-      <p>Here </p>
+      <p>please fill in your information </p>
     </div>
-    <div id="picture">
+    <form id="new-user">
+      <div id="user-info">
+        <label for="new-user-first-name">First Name</label>
+        <input type="text" id="new-user-first-name" name="new-user-first-name">
+        <label for="new-user-last-name">Last Name</label>
+        <input type="text" id="new-user-last-name" name="new-user-last-name">
+        <label for="new-user-age">Age</label>
+        <input type="number" id="new-user-age" name="new-user-age" min="1" max="100" value="18">
+      </div>
+      <div id="dog-info">
+        <label for="new-user-dog-name">Dog Name</label>
+        <input type="text" id="new-user-first-name" name="new-user-first-name">
+        <label for="new-user-dog-breed">select Breed</label>
+        <select id="dog" name="breed" size="3">
+          <option value="german shepard">german shepard</option>
+          <option value="golden retriever">golden retriever</option>
+          <option value="bulldog">bulldog</option>
+          <option value="poodle">poodle</option>
+        </select>
+        <input type="submit" value="Submit">
+        <input type="reset">
+      </div>
 
+    </form>
+    <div id=" picture">
     </div>
+
   </div>
 </body>
 
