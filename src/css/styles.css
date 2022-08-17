@@ -1,7 +1,8 @@
 body {
-  background-color: rgb(174, 135, 135);
+  background-color: rgb(73, 3, 127);
+  background-image: image('img/juno.jpg');
   color: rgb(209, 205, 199);
-  display: flex;
+  /* display: flex; */
   justify-content: space-between;
   border: solid, blue;
 }
@@ -14,19 +15,31 @@ body {
   border: 4mm ridge, blue; */
   margin: auto;
   width: 60%;
-  border: 3px solid #73AD21;
+  border: 4mm ridge rgba(211, 220, 50, .6);
   padding: auto;
+  /* display: flex; */
 }
 
 .links {
   border: solid, black;
-  background-color: rgb(241, 105, 7);
+  background-color: rgb(252, 252, 252);
   margin: auto;
   padding: auto;
-  display: flex;
+  /* display: flex; */
   justify-content: space-evenly;
+
 }
 
 #about {
   background-color: cornflowerblue;
+  object-position: center;
+  /* display: flex; */
+}
+
+.banner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: auto;
+  /* display: flex; */
 }
