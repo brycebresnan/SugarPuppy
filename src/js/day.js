@@ -5,4 +5,13 @@ export default class Day {
     this.currentTime = new Date();
     this.eventLog = []
   }
+
+  startDay(){
+    const eventArray = this.eventsList;
+    eventArray.forEach(item, function(){
+      let time = item[0];
+      const rTime = TimeService.randomizeTime(time, 1);
+      TimeService.timer(rTime, item[1]);
+    });
+  }
 }
