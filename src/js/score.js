@@ -14,4 +14,8 @@ export default class Score {
       this.score - 25; 
     }
   }
+
+  resetScore() {
+    this.score = 100;
+  }
 }
