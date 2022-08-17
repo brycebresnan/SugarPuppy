@@ -6,7 +6,7 @@ export default class Dog {
    dogBreeds = ['maltese','goldenRetriever','pomeranian'] 
    dogStatus = ['living','sick','deceased'] //could move this to main index js folder 
  
-  constructor (name,breed, image){  
+  constructor (name,breed,image){  
 
     this.name = name, 
     this.breed = breed,  
@@ -50,7 +50,7 @@ export default class Dog {
     } 
   }
   
-  healthImpactOnLife(){
+  determineStatus(){
     if (this.health < 25){
       let this.status = 'sick', 
     } else if (this.health === 0){
