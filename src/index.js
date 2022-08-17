@@ -2,17 +2,23 @@ import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './css/styles.css';
 import TimeService from "./js/timeService.js";
+import Score from "./js/score.js";
+import Day from "./js/day.js";
 
-//*****************For Testing Timer********************
-// running();
+// *****************For Testing Timer********************
+const array = [["0:24",alarm],["0:22",alarm],["0:23",alarm]];
+let day = new Day(0, array);
 
-// function running(){
-//   console.log("running!");
-//   TimeService.timer("20:55", alarm);
-// }
+running();
 
-// function alarm() {
-//   window.alert("It's Time!");
-// }
+function running(){
+  console.log("running!");
+  day.startDay();
+}
 
-//*****************For Testing Timer********************
+function alarm() {
+  window.alert(`It's Time!`);
+
+}
+
+// *****************For Testing Timer********************
