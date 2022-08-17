@@ -1,3 +1,5 @@
+import { library } from "webpack"
+
 export default class Dog { 
 
    dogMoods = ['neutral','happy', 'angry','sad','deceased']
@@ -21,6 +23,43 @@ export default class Dog {
   // go over how health and happiness properties co-relate. 
   // status can be either a string, or a key-value pair with values 
   // could have an impact on health or happiness. 
+
+  decreaseDogHappiness(int){
+    let this.happiness = (this.happiness - 5)*int; 
+  }
+
+  increaseDogHappiness(int){
+    let this.happiness = (this.happiness + 5)*int; 
+  }
+ 
+  decreaseDogHealth(int){
+    let this.health = (this.health - 5)*int; 
+  }
+
+  increaseDogHealth(int){
+    let this.health = (this.health + 5)*int; 
+  } 
+
+  ageimpactOnHealth(){
+    if (this.age >= 9 && <= 14){
+      let this.health = this.health - 25,   
+    } else if (this.age >= 14 && this.age <=23){
+      let this.health = this.health - 45, 
+    } else if (this.age === 23 ) {
+      let this.health = this.health - 65, 
+    } 
+  }
+  
+  healthImpactOnLife(){
+    if (this.health < 25){
+      let this.status = 'sick', 
+    } else if (this.health === 0){
+      let this.status = 'deceased'
+    } else {
+      let this.status = 'living',
+    }
+  }
+
 
 
 }
