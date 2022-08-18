@@ -1,4 +1,10 @@
 export default class TimeService {
+  constructor() {
+    this.startTime = 0;
+    this.endTime = 0;
+    this.isRunning = 0;
+    this.duration = 0;
+  }
   
   static timer(time, event, day) { 
     const hour = Number(time.split(':')[0]);
@@ -39,5 +45,28 @@ export default class TimeService {
     return randTime;
   }
 
+  startWatch() {
+    if (this.isRunning) throw new Error("StopWatch has already been started.");
+    this.isRunning = true;
+    this.startTime = new Date();
+    console.log("start!");
+  }
+
+  stopWatch() {
+    if (!this.isRunning) throw new Error("StopWatch has already been stopped.");
+    this.isRunning = false;
+    this.endTime = new Date();
+    const seconds = (this.endTime.getTime() - this.startTime.getTime()) / 1000;
+    this.duration += seconds;
+    console.log(this.duration);
+    return this.duration;
+  }
+
+  resetWatch() {
+    this.duration = 0;
+    this.startTime = 0;
+    this.endTime = 0;
+    this.isRunning = false;
+  }
 
 }
