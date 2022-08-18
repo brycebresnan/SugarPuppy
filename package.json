@@ -1,5 +1,5 @@
 {
-  "name": "crypro-app",
+  "name": "SugarPuppy-app",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -10,7 +10,7 @@
     "test": "jest --coverage"
   },
   "keywords": [],
-  "author": "Bryce Bresnan <bryce.bresnan@gmail.com> , Evegy Zbirun <evegyzbirun@users.noreply.github.com>, Kasidit Srisawat <paulkasidit@gmail.com>",
+  "author": "Bryce Bresnan <bryce.bresnan@gmail.com> , Evegy Zbirun <evegyzbirun@users.noreply.github.com>, Kasidit Srisawat <paulkasidit@gmail.com>,Anthony Gladden <a.gladden360@outlook.com>"
   "license": "MIT",
   "devDependencies": {
     "@babel/core": "^7.18.6",
