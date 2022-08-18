@@ -24,7 +24,7 @@
   </div> -->
     <header>
       <a href="#" class="logo">Logo</a>
-      <div id="toggle"></div>
+      <div id="toggle" onclick="toggle()"></div>
     </header>
     <div class="content">
       <h2>Hellow world,<br> I'm <samp>Evgeny</samp></h2>
@@ -47,6 +47,14 @@
       <li><a href="#">Score</a></li>
     </ul>
   </div>
+  <script type="text/javascript">
+    function toggle() {
+      let sec = document.getElementById('sec');
+      let nav = document.getElementById('navigation');
+      sec.classList.toggle('active')
+      nav.classList.toggle('active')
+    }
+  </script>
 </body>
 
 </html>
