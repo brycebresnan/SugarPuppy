@@ -9,22 +9,14 @@ export default class Simulator {
     this.eventLog = [];
   }
 
-  // packager() {
-  //   const day = new Day();
-  //   const events = new Event();
-  //   const eventList = [["7:00",events.walk]];
-  //   day.eventsList = eventList;
-  //   day.startDay();
-  // }
-
   simStart(){
-    const events = new Event();
-    const eventList = [["12:01",events.walk]];
-    const day = new Day(1,eventList);
-    const score = new Score();
-    this.startDay(day)
-    console.log(this.eventLog())
-    
+    const eventList = [["16:15", this.packager.bind(this)]];
+    const day = new Day(1, eventList);
+    this.startDay(day);
+  }
+
+  packager(){
+    this.eventRun(Event.morningWalk(), this.score, this.eventLog);
   }
 
   startDay(day) {
@@ -36,28 +28,34 @@ export default class Simulator {
     });
   }
 
-  async eventRun(infoObject, score) {
+  async eventRun(infoObject, score, eventLog) {
     let stopWatch = new TimeService();
     stopWatch.startWatch(); //Starts the timer for the event
 
-    //display title
+    document.getElementById("eventTitle").innerText = infoObject.eventTitle;//display title
 
-    //display text
+    document.getElementById("eventText").innerText = infoObject.eventText;//display text
 
     //if contains items, display items
 
-    //if contains text, display text
+    //if contains cost, display text
 
     let element = document.querySelector("button"); //change button name. Might have to pass into function later.
     await Event.clickListener(element,"click", stopWatch);
 
-    score.calculateScore(stopWatch.duration);
+    document.getElementById("eventTitle").innerText = null;//display title
+
+    document.getElementById("eventText").innerText = null;//display text
+
+    score.calculateScore(60);
 
     const timeStamp = new Date();
-    let logArray = [timeStamp, eventTitle, score.score]; //find a way to package score
-    this.eventLog.push(logArray); //find a way to push to eventLog in Simulator. Return?
-    console.log(this.eventLog);
+    let logArray = [timeStamp, infoObject["eventTitle"], score.score]; //find a way to package score
+    // this.eventLog.push(logArray); //find a way to push to eventLog in Simulator. Return?
+    eventLog.push(logArray);
+    
   }
+
 
 
 }
