@@ -1,7 +1,6 @@
 export default class Score {
   constructor() {
     this.score = 100;
-    this.totalScore = 1000;
   }
 
   calculateScore(time){
