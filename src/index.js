@@ -1,9 +1,17 @@
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './css/styles.css';
-import TimeService from "./js/timeService.js";
-import Score from "./js/score.js";
-import Day from "./js/day.js";
+import Simulator from './js/simulator';
+
+
+
+let sim = new Simulator();
+sim.simStart();
+
+
+
+
+
 
 // *****************For Testing Timer********************
 // const array = [["16:50",alarm],["16:51",alarm],["16:52",alarm]];
@@ -27,6 +35,26 @@ import Day from "./js/day.js";
 // *****************For Testing StopWatch********************
 
 // const stopWatch = new TimeService();
+
+// function clickListener(element, listenerName) {
+//   return new Promise(function (resolve, reject) {
+//       var listener = event => {
+//           console.log("Click!")
+//           let time = stopWatch.stopWatch();
+//           console.log(time);
+//           element.removeEventListener(listenerName, listener); 
+//           resolve(event);
+//       };
+//       element.addEventListener(listenerName, listener);
+//   });
+// }
+// async function click() {
+//   stopWatch.startWatch();
+//   let element = document.querySelector("button");
+//   await clickListener(element,"click");
+// }
+
+// click();
 
 // run();
 
