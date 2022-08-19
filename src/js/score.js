@@ -3,7 +3,7 @@ export default class Score {
     this.score = 100;
   }
 
-  static calculateScore(time){
+  calculateScore(time){
     if (time < 10) {
       return;
     } else if (time > 11 && time < 30) {
