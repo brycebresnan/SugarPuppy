@@ -36,5 +36,28 @@ export default class Simulator {
     });
   }
 
+  async eventRun(infoObject, score) {
+    let stopWatch = new TimeService();
+    stopWatch.startWatch(); //Starts the timer for the event
+
+    //display title
+
+    //display text
+
+    //if contains items, display items
+
+    //if contains text, display text
+
+    let element = document.querySelector("button"); //change button name. Might have to pass into function later.
+    await Event.clickListener(element,"click", stopWatch);
+
+    score.calculateScore(stopWatch.duration);
+
+    const timeStamp = new Date();
+    let logArray = [timeStamp, eventTitle, score.score]; //find a way to package score
+    this.eventLog.push(logArray); //find a way to push to eventLog in Simulator. Return?
+    console.log(this.eventLog);
+  }
+
 
 }

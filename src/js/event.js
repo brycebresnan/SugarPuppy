@@ -33,5 +33,8 @@ export default class Event {
     this.eventLog.push(logArray); //find a way to push to eventLog in Simulator. Return?
     console.log(this.eventLog);
 
+    returnObj = {"eventTitle":eventTitle, "eventText":eventText}
   }
+
+  
 }
