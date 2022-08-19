@@ -17,14 +17,23 @@ export default class Simulator {
   //   day.startDay();
   // }
 
-  start(){
+  simStart(){
     const events = new Event();
     const eventList = [["12:01",events.walk]];
     const day = new Day(1,eventList);
     const score = new Score();
-    day.startDay();
+    this.startDay(day)
     console.log(this.eventLog())
     
+  }
+
+  startDay(day) {
+    const eventArray = day.eventsList;
+    eventArray.forEach(item => {
+      let time = item[0];
+      const rTime = TimeService.randomizeTime(time, 0);
+      TimeService.timer(rTime, item[1], day.dayNumber);
+    });
   }
 
 
