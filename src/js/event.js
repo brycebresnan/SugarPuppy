@@ -3,90 +3,72 @@
 export default class Event {
   constructor() {
     this.morningWalk = {
-      time:"21:16",
-      eventTitle:"Morning Walk!",
+      time:"01:04",
+      random:1,
+      chance:100,
+      eventTitle:"Morning Walk",
       eventText:"Description of the event",
       items:["Leash","Collar"]
     };
     this.eveningWalk = {
-      time:"21:17",
-      eventTitle:"Evening Walk!",
+      time:"21:16",
+      random:1,
+      chance:100,
+      eventTitle:"Evening Walk",
       eventText:"Description of the event",
       items:["Leash","Collar"]
+    };
+    this.foodMorning = {
+      time:"21:16",
+      random:0,
+      chance:100,
+      eventTitle:"Time to Eat",
+      eventText:"Description of the event",
+      items:["Bowl","Food"]
+    };
+    this.foodEvening = {
+      time:"21:16",
+      random:0,
+      chance:100,
+      eventTitle:"Time to Eat!",
+      eventText:"Description of the event",
+      items:["Bowl","Food"]
+    };
+    this.playTime = {
+      time:"21:16",
+      random:1,
+      chance:80,
+      eventTitle:"Time to Play!",
+      eventText:"Description of the event",
+      items:["Chew Toy","Ball"]
+    };
+    this.visitTheVet = {
+      time:"21:16",
+      random:0,
+      chance:100,
+      eventTitle:"Visit the Vet",
+      eventText:"Description of the event",
+      items:["Vet Bill"]
+    };
+    this.sick = {
+      time:"21:16",
+      random:2,
+      chance:5,
+      eventTitle:"Sick Dog",
+      eventText:"Your Dog has gotten sick! Maybe he ate something he wasn't supposed to. Maybe he got a disease from another dog. In any case, you need to head to the vet as soon as possible!",
+      items:["Vet Bill"]
     };
   }
 
   static eventPackager(eventObj) {
     let keysArray = Object.keys(eventObj);
     let eventArray = [];
+    
     keysArray.forEach((item) => {
       eventArray.push([eventObj[item].time, eventObj[item]]);
     });
-
+    console.log(eventArray);
     return eventArray;
-  }
-
-
-
-
-  // static morningWalk() {
-  //   const time = "7:00";
-  //   const eventTitle = "Walk the Dog";
-  //   const eventText = "Description of the event";
-  //   const items = ["Leash","Collar"]; //items required for the event
-  //   // if (searchItems(items) === false){buyItems(items)}; //search for items, if not found, promt user to buy items
-
-  //   return {"time":time,"eventTitle":eventTitle, "eventText":eventText, "items":items};
-  // }
-
-  // static eveningWalk() {
-  //   const time = "19:00";
-  //   const eventTitle = "Walk the Dog";
-  //   const eventText = "Description of the event";
-  //   const items = ["Leash","Collar"]; //items required for the event
-  //   // if (searchItems(items) === false){buyItems(items)}; //search for items, if not found, promt user to buy items
-
-  //   return {"time":time,"eventTitle":eventTitle, "eventText":eventText, "items":items};
-  // }
-
-  static morningFood() {
-    const time = "8:00";
-    const eventTitle = "Feed the Dog";
-    const eventText = "Description of the event";
-    const items = ["Bowl","DogFood"]; //items required for the event
-    // if (searchItems(items) === false){buyItems(items)}; //search for items, if not found, promt user to buy items
-
-    return {"time":time,"eventTitle":eventTitle, "eventText":eventText, "items":items};
-  }
-
-  static eveningFood() {
-    const time = "17:00";
-    const eventTitle = "Feed the Dog";
-    const eventText = "Description of the event";
-    const items = ["Bowl","DogFood"]; //items required for the event
-    // if (searchItems(items) === false){buyItems(items)}; //search for items, if not found, promt user to buy items
-
-    return {"time":time,"eventTitle":eventTitle, "eventText":eventText, "items":items};
-  }
-
-  static play() {
-    const time = "10:00";
-    const eventTitle = "Play with the Dog";
-    const eventText = "Description of the event";
-    const items = ["Chew Toy","Ball"]; //items required for the event
-    // if (searchItems(items) === false){buyItems(items)}; //search for items, if not found, promt user to buy items
-
-    return {"time":time,"eventTitle":eventTitle, "eventText":eventText, "items":items};
-  }
-
-  static vet() {
-    const time = "13:00";
-    const eventTitle = "Take the Dog to the Vet";
-    const eventText = "Description of the event";
-    const items = ["Vet Bill"]; //items required for the event
-    // if (searchItems(items) === false){buyItems(items)}; //search for items, if not found, promt user to buy items
-
-    return {"time":time,"eventTitle":eventTitle, "eventText":eventText, "items":items};
   }
 
 }
