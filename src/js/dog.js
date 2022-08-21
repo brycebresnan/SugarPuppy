@@ -15,7 +15,7 @@ export default class Dog {
                                 // because there might be conflicts to
                                 // an already existing variable 
     this.happiness = 100; 
-    this.inventory = []; //intialize empty array 
+    this.inventory = []; //intialize empty array Consider moving to simulator 
   }
 
   // go over how health and happiness properties co-relate. 
