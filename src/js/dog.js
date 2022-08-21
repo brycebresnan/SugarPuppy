@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import { library } from "webpack"
 
 export default class Dog { 
@@ -18,7 +17,6 @@ export default class Dog {
                                 // because there might be conflicts do 
                                 // an already existing variable 
     this.happiness = 100, 
-=======
 
 export default class Dog { 
 
@@ -37,14 +35,12 @@ export default class Dog {
                                 // an already existing variable 
     this.happiness = 100; 
     this.inventory = []; //intialize empty array Consider moving to simulator 
->>>>>>> main
   }
 
   // go over how health and happiness properties co-relate. 
   // status can be either a string, or a key-value pair with values 
   // could have an impact on health or happiness. 
 
-<<<<<<< HEAD
   decreaseDogHappiness(int){
     let this.happiness = (this.happiness - 5)*int; 
   }
@@ -68,7 +64,7 @@ export default class Dog {
       let this.health = this.health - 45, 
     } else if (this.age === 23 ) {
       let this.health = this.health - 65, 
-=======
+
   decreaseDogHappiness(int) {
     this.happiness = (this.happiness - 5)*int; 
   }
@@ -92,25 +88,22 @@ export default class Dog {
       this.health = this.health - 45; 
     } else if (this.age === 23 ) {
       this.health = this.health - 65; 
->>>>>>> main
     } 
   }
   
   determineStatus(){
     if (this.health < 25){
-<<<<<<< HEAD
       let this.status = 'sick', 
     } else if (this.health === 0){
       let this.status = 'deceased'
     } else {
       let this.status = 'living',
-=======
+
       this.status = 'sick'; 
     } else if (this.health === 0){
       this.status = 'deceased';
     } else {
       this.status = 'living';
->>>>>>> main
     }
   }
 
