@@ -1,4 +1,3 @@
-import { library } from "webpack"
 
 export default class Dog { 
 
