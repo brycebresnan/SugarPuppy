@@ -3,6 +3,7 @@ import Score from "./score.js";
 import Day from "./day.js";
 import Event from "./event.js";
 
+
 export default class Simulator {
   constructor() {
     this.score = new Score();
@@ -10,7 +11,7 @@ export default class Simulator {
   }
 
   simStart(){
-    const eventList = [["16:15", this.packager.bind(this)]];
+    const eventList = [["20:13", this.packager.bind(this)]];
     const day = new Day(1, eventList);
     this.startDay(day);
   }
@@ -38,19 +39,22 @@ export default class Simulator {
 
     //if contains items, display items
 
-    //if contains cost, display text
+    //search for items, if not found, promt user to buy items
+    // if (searchItems(items) === false){buyItems(items)}; 
 
-    let element = document.querySelector("button"); //change button name. Might have to pass into function later.
+    //if contains cost, display cost
+
+    let element = document.getElementById("acceptButton"); //change button name. Might have to pass into function later.
     await Event.clickListener(element,"click", stopWatch);
 
     document.getElementById("eventTitle").innerText = null;//display title
 
     document.getElementById("eventText").innerText = null;//display text
 
-    score.calculateScore(60);
+    score.calculateScore(stopWatch.duration);
 
     const timeStamp = new Date();
-    let logArray = [timeStamp, infoObject["eventTitle"], score.score]; //find a way to package score
+    let logArray = [`${timeStamp.toString()}, ${infoObject["eventTitle"]}, Score = ${score.score}`]; //find a way to package score
     // this.eventLog.push(logArray); //find a way to push to eventLog in Simulator. Return?
     eventLog.push(logArray);
     
