@@ -16,7 +16,7 @@ export default class Simulator {
     this.dog = new Dog();
     this.eventLog = [];
     this.stopWatch = new TimeService();
-    this.inventory = [], //intialize empty array 
+    this.inventory = []; //storing strings which represent items 
   }
 
   simStart(){
@@ -50,9 +50,44 @@ export default class Simulator {
 
     document.getElementById("eventText").innerText = infoObject.eventText;//display text
 
-    //if contains items, display items
+    // 1 - check if the item displayed in the DOM actually exists in the itemArray in the Cost objecy 
 
-    //search for items, if not found, promt user to buy items
+    //function searchItems(itemToBeSearched){ 
+        //for const[key,value] in infoObject.itemPrices{
+            //if (itemToBeSearched === key){
+                //return true; 
+            //} else {
+                //return false; 
+            //}
+        //}
+    //}
+
+    // 2 - search item price, will only return price if item already exists
+
+    // function searchItemPrice(searchItems){ 
+        //let itemPriceToBeAdded; 
+        //if true {
+          
+        //}
+    //}
+    
+    //3 - 
+    //function searchInventory(itemToBeSearched, inventoryArray) {
+      //let i = 0 
+      //for (i in inventoryArray){}
+      //while(i < inventoryArray.length){
+        //if (itemToBeSearched === inventoryArray[i]){
+              //return true; 
+          //} else {
+             //return false; 
+          //}
+      //}
+    //}
+    //}; 
+
+    //search for items, if not found, prompt user to buy items
+
+
     // if (searchItems(items) === false){buyItems(items)}; 
   }
 
@@ -85,7 +120,6 @@ export default class Simulator {
     //gets items from infoObject
     //increments cost by item price
     //pushes items to inventory
-
   }
 
 }
