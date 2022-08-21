@@ -18,7 +18,6 @@ export default class Dog {
                                 // because there might be conflicts do 
                                 // an already existing variable 
     this.happiness = 100, 
-    this.inventory = [], //intialize empty array 
 =======
 
 export default class Dog { 

@@ -16,6 +16,7 @@ export default class Simulator {
     this.dog = new Dog();
     this.eventLog = [];
     this.stopWatch = new TimeService();
+    this.inventory = [], //intialize empty array 
   }
 
   simStart(){
