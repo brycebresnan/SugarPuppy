@@ -21,9 +21,9 @@ export default class Simulator {
   }
 
   simStart(){
-    const eventList = Event.eventPackager(this.event);
-    const day = new Day(1, eventList);
-    this.startDay(day);
+    this.daysList.forEach((day) => {
+      this.startDay(day);
+    });
   }
 
   startDay(day) {
@@ -36,7 +36,6 @@ export default class Simulator {
         this.eventRun(item[1]);
         this.eventHold = item[1];
       }
-      
       TimeService.timer(rTime, packager.bind(this), day.dayNumber);
     });
   }
@@ -95,9 +94,9 @@ export default class Simulator {
       const eventList = Event.eventPackager(this.event);
       let day = new Day(i+1, eventList);
       daysList.push(day);
-      i++
+      i++;
     }
-    console.log(daysList);
+    return daysList;
   }
 
 }
