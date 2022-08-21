@@ -2,6 +2,7 @@
 export default class Event {
   constructor() {
     this.mornWalk = this.morningWalk.bind(this);
+    this.evenWalk = this.eveningWalk.bind(this);
   }
 
   static clickListener(element, listenerName, stopWatch) {
