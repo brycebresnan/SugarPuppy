@@ -8,7 +8,8 @@ import Simulator from './js/simulator';
 let sim = new Simulator();
 sim.simStart();
 
-
+let element = document.getElementById("dispLog"); //change button name. Might have to pass into function later.
+element.addEventListener("click", () => document.getElementById("eventLog").innerText = sim.eventLog[0]);
 
 
 
