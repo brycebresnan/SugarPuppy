@@ -1,5 +1,6 @@
 export default class Cost { 
 
+<<<<<<< HEAD
   constructor {
 
     this.totalCost = 0;  
@@ -23,6 +24,25 @@ export default class Cost {
 
     for (const [key,value] of Object.entries(this.itemPrices)){
       if object === key{
+=======
+  constructor() {
+    this.totalCost = 0;
+    this.itemPrices = { //this does not have to be in the class, it can probably be placed outside, so everybody could edit it. 
+      food:22,
+      vet:250, 
+      leash:15, //if you take the dog for a walk you would need to buy a leash 
+      collar:10,
+    };  
+  }
+
+  //potentialy could be interlinked with buttons in the UI, we should discuss this
+  //during the meeting this Tuesday. 
+
+  incrementCost(object) {  //kind of tackles both cost incrementer and adding key value pairs
+
+    for (const [key,value] of Object.entries(this.itemPrices)){
+      if (object === key) {
+>>>>>>> main
         this.totalCost = this.totalCost += value; 
       }
     }

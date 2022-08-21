@@ -2,12 +2,39 @@
 <html lang="us-eng">
 
 <head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Title</title>
 </head>
 
 <body>
   <div class="container">
-    <h1>Hello World!</h1>
+    <h1>Dog Simulator</h1>
+    <h3 id="eventItems"></h3>
+    <h3 id="eventCost"></h3>
+    <button id="dispLog">Display Log</button>
+    <p id="eventLog"></p>
+    <button id="myBtn">Open Modal</button>
+  </div>
+
+  <!-- The Modal -->
+  <div id="myModal" class="modal">
+
+    <!-- Modal content -->
+    <div class="modal-content">
+      <div class="modal-head">
+        <h2 id="eventTitle">Test Title</h2>
+      </div>
+      <div class="modal-body">
+        <p id="eventText">Some text in the Modal Body</p>
+        <h3 id="eventItems">Item1, Item2</h3>
+        <h3 id="eventCost">Total Cost: $100</h3>
+      </div>
+      <div class="modal-foot">
+        <button class="close">Skip</button>
+        <button id="acceptButton">Accept</button>
+        <button id="buyButton">Buy Items</button>  
+      </div>
+    </div>
   </div>
 </body>
 
