@@ -39,7 +39,7 @@ export default class Simulator {
     });
   }
 
-  async eventRun(infoObject) {
+  eventRun(infoObject) {
     const modal = document.getElementById("myModal");
     modal.style.display = "block";
 
