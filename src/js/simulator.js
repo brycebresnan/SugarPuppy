@@ -7,26 +7,27 @@ import Event from "./event.js";
 export default class Simulator {
   constructor() {
     this.score = new Score();
+    this.event = new Event();
     this.eventLog = [];
   }
 
   simStart(){
-    const eventList = [["20:37", this.packager.bind(this)]];
+    const eventList = Event.eventPackager(this.event);
     const day = new Day(1, eventList);
     this.startDay(day);
-  }
-
-  packager(){
-    let event = Event.eventPackager();
-    this.eventRun(event[1], this.score, this.eventLog);
   }
 
   startDay(day) {
     const eventArray = day.eventsList;
     eventArray.forEach(item => {
       let time = item[0];
-      const rTime = TimeService.randomizeTime(time, 0);
-      TimeService.timer(rTime, item[1], day.dayNumber);
+      const rTime = TimeService.randomizeTime(time, 0); //randomizes time. Will add "randomValue" to event object at some point
+      
+      function packager(){
+        this.eventRun(item[1], this.score, this.eventLog);
+      }
+      
+      TimeService.timer(rTime, packager.bind(this), day.dayNumber);
     });
   }
 
@@ -61,7 +62,7 @@ export default class Simulator {
   }
 
   static clickListener(element, listenerName, stopWatch) {
-    return new Promise(function (resolve, reject) {
+    return new Promise(function (resolve) {
       let listener = event => {
         stopWatch.stopWatch();
         element.removeEventListener(listenerName, listener); 
