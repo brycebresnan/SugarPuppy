@@ -8,24 +8,72 @@
 </head>
 
 <body>
+  <div id="user-info">
+    <p>User name</p>
+    <p>User dog</p>
+  </div>
+  <div id="status">
+    <p><samp id="green">Green</samp><samp id="yellow">Yellow</samp><samp id="red">Red</samp></p>
+  </div>
+  <form id="task-window">
+    <p>Task Window</p>
+  </form>
   <div class="container">
     <span class="links">
       <a href="html/activity-one.html"> Activity One.</a>
       <a href="html/activity-two.html"> Activity Two.</a>
+      <a href="html/main-game.html">Game</a>
     </span>
-    <div id="about">
-      <h3>About SugarPuppy:</h3>
-      <p>This is a app that lets you simulate whats it like to raise your very own dog.
-        See if a puppy is the right fit for you. SugarPuppy uses real world time to alert you when your puppy need care.
-        Walk,Bathe,and even feed your dog, plus many more.
-      </p>
-      <img src="img/juno.jpg" alt="NEXT PAGe" style="width:auto;">
-    </div>
-
-    <div id="picture">
-
-    </div>
   </div>
+  <form id="new-user">
+    <div id="user-info">
+      <label for="new-user-first-name">First Name</label>
+      <input type="text" id="new-user-first-name" name="new-user-first-name">
+      <label for="new-user-last-name">Last Name</label>
+      <input type="text" id="new-user-last-name" name="new-user-last-name">
+    </div>
+    <div id="dog-info">
+      <label for="new-user-dog-name">Dog Name</label>
+      <input type="text" id="new-user-dog-name" name="new-user-dog-name">
+      <label for="new-user-dog-age">Dog age</label>
+      <input type="number" id="new-user-dog-age" name="new-user-dog-age" min="1" max="100" value="18">
+      <label for="new-user-dog-breed">select Breed</label>
+      <select id="dog" name="breed" size="1">
+        <option value="german shepard">german shepard</option>
+        <option value="golden retriever">golden retriever</option>
+        <option value="bulldog">bulldog</option>
+        <option value="poodle">poodle</option>
+      </select>
+      <input type="submit" value="ok">
+      <input type="reset">
+    </div>
+  </form>
+  <script>
+    popup();
+
+    function popup() {
+
+      document.getElementById("new-user").style.display = "block";
+
+      console.log("wait 3 seconds then hide");
+
+      setTimeout(hidePopup, 3000);
+
+    }
+
+    function hidePopup() {
+
+      document.getElementById("new-user").style.display = "none";
+
+      console.log("wait 5 seconds then show popup again");
+
+      setTimeout(popup, 5000);
+
+    }
+
+  </script>
+
+
 </body>
 
 </html>

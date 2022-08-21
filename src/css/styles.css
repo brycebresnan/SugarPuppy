@@ -1,5 +1,5 @@
 body {
-  background-color: rgb(73, 3, 127);
+  background-color: rgb(4, 113, 255);
   background-image: image('img/juno.jpg');
   color: rgb(209, 205, 199);
   /* display: flex; */
@@ -42,4 +42,8 @@ body {
   left: 0;
   width: auto;
   /* display: flex; */
+}
+
+#new-user {
+  /* visibility: hidden; */
 }
