@@ -11,13 +11,14 @@ export default class Simulator {
   }
 
   simStart(){
-    const eventList = [["20:13", this.packager.bind(this)]];
+    const eventList = [["20:37", this.packager.bind(this)]];
     const day = new Day(1, eventList);
     this.startDay(day);
   }
 
   packager(){
-    this.eventRun(Event.morningWalk(), this.score, this.eventLog);
+    let event = Event.eventPackager();
+    this.eventRun(event[1], this.score, this.eventLog);
   }
 
   startDay(day) {
@@ -45,7 +46,7 @@ export default class Simulator {
     //if contains cost, display cost
 
     let element = document.getElementById("acceptButton"); //change button name. Might have to pass into function later.
-    await Event.clickListener(element,"click", stopWatch);
+    await Simulator.clickListener(element,"click", stopWatch);
 
     document.getElementById("eventTitle").innerText = null;//display title
 
@@ -53,11 +54,21 @@ export default class Simulator {
 
     score.calculateScore(stopWatch.duration);
 
-    const timeStamp = new Date();
+    const timeStamp = new Date(); //could package date better. Little long right now
     let logArray = [`${timeStamp.toString()}, ${infoObject["eventTitle"]}, Score = ${score.score}`]; //find a way to package score
-    // this.eventLog.push(logArray); //find a way to push to eventLog in Simulator. Return?
     eventLog.push(logArray);
     
+  }
+
+  static clickListener(element, listenerName, stopWatch) {
+    return new Promise(function (resolve, reject) {
+      let listener = event => {
+        stopWatch.stopWatch();
+        element.removeEventListener(listenerName, listener); 
+        resolve(event);
+      };
+      element.addEventListener(listenerName, listener);
+    });
   }
 
 
