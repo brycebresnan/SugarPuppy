@@ -32,6 +32,9 @@ export default class Simulator {
   }
 
   async eventRun(infoObject, score, eventLog) {
+    const modal = document.getElementById("myModal");
+    modal.style.display = "block";
+
     let stopWatch = new TimeService();
     stopWatch.startWatch(); //Starts the timer for the event
 
@@ -44,10 +47,10 @@ export default class Simulator {
     //search for items, if not found, promt user to buy items
     // if (searchItems(items) === false){buyItems(items)}; 
 
-    //if contains cost, display cost
-
     let element = document.getElementById("acceptButton"); //change button name. Might have to pass into function later.
     await Simulator.clickListener(element,"click", stopWatch);
+    
+    modal.style.display = "none"; //close modal
 
     document.getElementById("eventTitle").innerText = null;//display title
 
