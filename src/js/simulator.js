@@ -60,7 +60,7 @@ export default class Simulator {
       return;
     } else {
       this.stopWatch.stopWatch();
-   
+
       const modal = document.getElementById("myModal");
 
       const infoObject = this.eventHold;
@@ -81,15 +81,4 @@ export default class Simulator {
     }
   }
 
-
-  // static clickListener(element, listenerName, stopWatch) {
-  //   return new Promise(function (resolve) {
-  //     let listener = event => {
-  //       stopWatch.stopWatch();
-  //       element.removeEventListener(listenerName, listener); 
-  //       resolve(event);
-  //     };
-  //     element.addEventListener(listenerName, listener);
-  //   });
-  // }
 }
