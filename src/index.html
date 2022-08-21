@@ -15,6 +15,7 @@
   <div id="status">
     <p><samp id="green">Green</samp><samp id="yellow">Yellow</samp><samp id="red">Red</samp></p>
   </div>
+  <button id="toggler" onclick="toggle(`task-window`)">TOGGLE</button>
   <form id="task-window">
     <p>Task Window</p>
   </form>
@@ -71,6 +72,16 @@
 
     }
 
+  </script>
+  <script>
+    function toggle(elementId) {
+      const element = document.getElementById(elementId);
+      if (element.style.display === "none") {
+        element.style.display = "block";
+      } else {
+        element.style.display = "none";
+      }
+    }
   </script>
 
 
