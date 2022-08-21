@@ -2,25 +2,17 @@ import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './css/styles.css';
 import Simulator from './js/simulator';
-import Event from './js/event';
 
 
 
 let sim = new Simulator();
-let eventObj = new Event();
 sim.simStart();
 
-let element = document.getElementById("dispLog"); //change button name. Might have to pass into function later.
-element.addEventListener("click", () => document.getElementById("eventLog").innerText = sim.eventLog[0]);
+//create button to see log 
+let element = document.getElementById("dispLog"); 
+let x = 0;
+element.addEventListener("click", () => document.getElementById("eventLog").innerText = x++ + sim.eventLog);
 
-Event.eventPackager(eventObj);
-
-// const morningWalk = {
-//     time:"10:00",
-//     eventTitle:"Walk the Dog",
-//     eventText:"Description of the event",
-//     items:["Leash","Collar"]
-// }
 
 
 // *****************For Testing Timer********************
