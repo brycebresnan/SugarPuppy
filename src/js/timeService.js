@@ -58,7 +58,7 @@ export default class TimeService {
     this.endTime = new Date();
     const seconds = (this.endTime.getTime() - this.startTime.getTime()) / 1000;
     this.duration += seconds;
-    console.log(this.duration);
+    console.log("stopped! " + this.duration);
     return this.duration;
   }
 
