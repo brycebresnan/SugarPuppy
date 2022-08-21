@@ -3,24 +3,25 @@
 
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Title</title>
+  <title>Peti</title>
 </head>
 
 <body>
   <div class="container">
-    <h1>Dog Simulator</h1>
-    <h3 id="eventItems"></h3>
-    <h3 id="eventCost"></h3>
-    <button id="dispLog">Display Log</button>
-    <p id="eventLog"></p>
-    <button id="myBtn">Open Modal</button>
+    <h1>Peti: Dog Simulator</h1>
+
+    <button id="dispLog">Display Log</button> <!-- This is for testing -->
+    <p id="eventLog"></p> <!-- This is for testing -->
+    <button id="alertBtn">Open Alert</button> <!-- This is for testing -->
+    <button id="introBtn">Open Intro</button> <!-- This is for testing -->
+    <button id="scoreBtn">Score</button>
   </div>
 
-  <!-- The Modal -->
-  <div id="myModal" class="modal">
 
-    <!-- Modal content -->
+  <div id="alertModal" class="modal">
+    <!-- The Alert Modal -->
     <div class="modal-content">
+      <!-- Alert Modal content -->
       <div class="modal-head">
         <h2 id="eventTitle">Test Title</h2>
       </div>
@@ -30,16 +31,84 @@
         <h3 id="eventCost">Total Cost: $100</h3>
       </div>
       <div class="modal-foot">
-        <button class="close">Skip</button>
+        <button id="alertClose" class="close">Close</button>
         <button id="acceptButton">Accept</button>
         <button id="buyButton">Buy Items</button>
       </div>
     </div>
   </div>
-  <div id="status">
-    <p><samp id="green">Green</samp><samp id="yellow">Yellow</samp><samp id="red">Red</samp></p>
+
+  <div id="score" class="modal">
+    <div class="modal-content">
+      <div class="modal-head">
+      </div>
+      <div class="modal-body">
+        <samp value="result">Score</samp>
+      </div>
+    </div>
   </div>
-  <button id="toggler" onclick="toggle(`task-window`)">Start</button>
+
+
+  <div id="introModal" class="modal">
+    <!-- The Intro Modal -->
+
+    <div class="modal-content">
+      <!-- INtro Modal content -->
+      <div class="modal-head">
+        <h2>Welcome to Peti!</h2>
+      </div>
+      <div class="modal-body">
+        <form id="new-user">
+          <div id="user-info">
+            <ul>
+              <li>
+                <label for="new-user-first-name">First Name</label>
+                <input type="text" id="new-user-first-name" name="new-user-first-name">
+              </li>
+              <li>
+                <label for="new-user-last-name">Last Name </label>
+                <input type="text" id="new-user-last-name" name="new-user-last-name">
+              </li>
+              <li>
+                <label for="new-user-dog-name">Dog Name </label>
+                <input type="text" id="new-user-dog-name" name="new-user-dog-name">
+              </li>
+              <li>
+                <label for="new-user-dog-age">Dog age</label>
+                <input type="number" id="new-user-dog-age" name="new-user-dog-age" min="1" max="100" value="18">
+              </li>
+              <li>
+                <label for="new-user-dog-breed">select Breed</label>
+                <select id="dog" name="breed" size="1">
+                  <option value="german shepard">german shepard</option>
+                  <option value="golden retriever">golden retriever</option>
+                  <option value="bulldog">bulldog</option>
+                  <option value="poodle">poodle</option>
+                </select>
+              </li>
+              <li>
+                <button type="submit">Start!</button>
+              </li>
+              <li>
+                <input type="reset">
+              </li>
+            </ul>
+          </div>
+        </form>
+      </div>
+      <div class="modal-foot">
+        <button id="introClose" class="close">Close</button>
+        <button id="scoreClose" class="close">Close</button>
+
+
+      </div>
+    </div>
+  </div>
+
+
+
+
+  <!-- <button id="toggler" onclick="toggle(`task-window`)">Start</button>
   <form id="task-window">
     <p>Task Window</p>
   </form>
@@ -49,50 +118,28 @@
       <a href="html/activity-two.html"> Activity Two.</a>
       <a href="html/main-game.html">Game</a>
     </span>
-  </div>
-  <form id="new-user">
-    <div id="user-info">
-      <label for="new-user-first-name">First Name</label>
-      <input type="text" id="new-user-first-name" name="new-user-first-name">
-      <label for="new-user-last-name">Last Name</label>
-      <input type="text" id="new-user-last-name" name="new-user-last-name">
-    </div>
-    <div id="dog-info">
-      <label for="new-user-dog-name">Dog Name</label>
-      <input type="text" id="new-user-dog-name" name="new-user-dog-name">
-      <label for="new-user-dog-age">Dog age</label>
-      <input type="number" id="new-user-dog-age" name="new-user-dog-age" min="1" max="100" value="18">
-      <label for="new-user-dog-breed">select Breed</label>
-      <select id="dog" name="breed" size="1">
-        <option value="german shepard">german shepard</option>
-        <option value="golden retriever">golden retriever</option>
-        <option value="bulldog">bulldog</option>
-        <option value="poodle">poodle</option>
-      </select>
-      <input type="submit" value="ok">
-      <input type="reset">
-    </div>
-  </form>
-  <script>
+  </div> -->
+
+  <!-- <script>
     popup();
 
     function popup() {
 
-      document.getElementById("new-user").style.display = "block";
+      document.getElementById("new-user").style.display = "none";
 
       console.log("wait 3 seconds then hide");
 
-      setTimeout(hidePopup, 3000);
+      // setTimeout(hidePopup, 3000);
 
     }
 
     function hidePopup() {
 
-      document.getElementById("new-user").style.display = "none";
+      document.getElementById("new-user").style.display = "block";
 
       console.log("wait 5 seconds then show popup again");
 
-      setTimeout(popup, 5000);
+      // setTimeout(popup, 5000);
 
     }
 
@@ -106,7 +153,7 @@
         element.style.display = "none";
       }
     }
-  </script>
+  </script> -->
 
 
 </body>

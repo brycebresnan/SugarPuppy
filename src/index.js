@@ -21,29 +21,55 @@ acceptButton.addEventListener("click", sim.eventEnd.bind(sim));
 
 // *****************For Modal Alert Testing********************
 // Get the modal
-const modal = document.getElementById("myModal");
+const alertModal = document.getElementById("alertModal");
+const introModal = document.getElementById("introModal");
+const score = document.getElementById("score");
 
 // Get the button that opens the modal
-const btn = document.getElementById("myBtn");
+const alertBtn = document.getElementById("alertBtn");
+const introBtn = document.getElementById("introBtn");
+const scoreBtn = document.getElementById("scoreBtn");
 
 // Get the <span> element that closes the modal
-const span = document.getElementsByClassName("close")[0];
-
+const alertCloseBtn = document.getElementById("alertClose");
+const introCloseBtn = document.getElementById("introClose");
+const scoreCloseBtn = document.getElementById("scoreClose");
 // When the user clicks on the button, open the modal
-btn.onclick = function () {
-  modal.style.display = "block";
+alertBtn.onclick = function () {
+  alertModal.style.display = "block";
+};
+introBtn.onclick = function () {
+  introModal.style.display = "block";
+};
+scoreBtn.onclick = function () {
+  score.style.display = "block";
 };
 
 // When the user clicks on <span> (x), close the modal
-span.onclick = function () {
-  modal.style.display = "none";
+alertCloseBtn.onclick = function () {
+  alertModal.style.display = "none";
+  introModal.style.display = "none";
+  score.style.display = "none";
 
 };
+
+introCloseBtn.onclick = function () {
+  alertModal.style.display = "none";
+  introModal.style.display = "none";
+  score.style.display = "none";
+};
+scoreCloseBtn.onclick = function () {
+  alertModal.style.display = "none";
+  introModal.style.display = "none";
+  score.style.display = "none";
+}
 
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function (event) {
   if (event.target == modal) {
-    modal.style.display = "none";
+    alertModal.style.display = "none";
+    introModal.style.display = "none";
+    //score.style.display = "none";
   }
 };
 // *****************For Modal Alert Testing********************

@@ -45,10 +45,10 @@ body {
 }
 
 #new-user {
-  /* visibility: hidden; */
+  /* visibility: block; */
   font-family: Arial, Helvetica, sans-serif;
-  background-color: rgb(45, 45, 45);
-  color: rgb(209, 205, 199);
+  background-color: rgb(6, 2, 6);
+  color: rgb(252, 252, 252);
 }
 
 /* The Modal (background) */
