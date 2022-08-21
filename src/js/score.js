@@ -3,6 +3,7 @@ export default class Score {
     this.score = 100;
   }
 
+  //this is in seconds. Change to minutes
   calculateScore(time){
     if (time < 10) {
       return;
