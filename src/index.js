@@ -8,11 +8,15 @@ import Simulator from './js/simulator';
 let sim = new Simulator();
 sim.simStart();
 
-//create button to see log 
-let element = document.getElementById("dispLog"); 
-let x = 0;
-element.addEventListener("click", () => document.getElementById("eventLog").innerText = x++ + sim.eventLog);
 
+
+//create button to see log 
+let logButton = document.getElementById("dispLog"); 
+let x = 0;
+logButton.addEventListener("click", () => document.getElementById("eventLog").innerText = x++ + sim.eventLog + " also " + sim.eventHold.eventTitle);
+
+let acceptButton = document.getElementById("acceptButton");
+acceptButton.addEventListener("click", sim.eventEnd.bind(sim));
 // *****************For Modal Alert Testing********************
 // Get the modal
 const modal = document.getElementById("myModal");
@@ -26,19 +30,20 @@ const span = document.getElementsByClassName("close")[0];
 // When the user clicks on the button, open the modal
 btn.onclick = function() {
   modal.style.display = "block";
-}
+};
 
 // When the user clicks on <span> (x), close the modal
 span.onclick = function() {
   modal.style.display = "none";
-}
+
+};
 
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function(event) {
   if (event.target == modal) {
     modal.style.display = "none";
   }
-}
+};
 // *****************For Modal Alert Testing********************
 
 // *****************For Testing Timer********************
