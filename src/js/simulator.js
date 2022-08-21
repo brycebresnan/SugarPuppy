@@ -18,6 +18,7 @@ export default class Simulator {
     this.daysList = this.createDays();
     this.eventLog = [];
     this.stopWatch = new TimeService();
+    this.inventory = [];
   }
 
   simStart(){
@@ -50,10 +51,14 @@ export default class Simulator {
 
     document.getElementById("eventText").innerText = infoObject.eventText;//display text
 
-    //if contains items, display items
+    if (infoObject.items) {};//display items in DOM
 
-    //search for items, if not found, promt user to buy items
-    // if (searchItems(items) === false){buyItems(items)}; 
+    if (!searchInventory(infoObject.items)) {
+      eventBuy(infoObject.items)
+     //find the prices by string in Cost.prices
+     //increment cost in this.cost.incrementCost(infoObject.items)
+     //display the cost?? 
+    }
   }
 
   eventEnd() {
@@ -74,11 +79,16 @@ export default class Simulator {
 
       this.score.calculateScore(this.stopWatch.duration);
       this.stopWatch.resetWatch();
-
+      
       const timeStamp = new Date(); //could package date better. Little long right now
       let logArray = [`${timeStamp.toString()}, ${infoObject["eventTitle"]}, Score = ${this.score.score}`]; //find a way to package score
       this.eventLog.push(logArray);
+      this.eventHold = null;
     }
+  }
+
+  eventSkip() {
+
   }
 
   eventBuy() {
