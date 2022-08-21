@@ -17,6 +17,8 @@ logButton.addEventListener("click", () => document.getElementById("eventLog").in
 
 let acceptButton = document.getElementById("acceptButton");
 acceptButton.addEventListener("click", sim.eventEnd.bind(sim));
+
+
 // *****************For Modal Alert Testing********************
 // Get the modal
 const modal = document.getElementById("myModal");
