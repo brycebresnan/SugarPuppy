@@ -3,7 +3,7 @@
 export default class Event {
   constructor() {
     this.morningWalk = {
-      time:"01:04",
+      time:"02:45",
       random:1,
       chance:100,
       eventTitle:"Morning Walk",
@@ -11,7 +11,7 @@ export default class Event {
       items:["Leash","Collar"]
     };
     this.eveningWalk = {
-      time:"21:16",
+      time:"02:35",
       random:1,
       chance:100,
       eventTitle:"Evening Walk",
@@ -19,7 +19,7 @@ export default class Event {
       items:["Leash","Collar"]
     };
     this.foodMorning = {
-      time:"21:16",
+      time:"02:36",
       random:0,
       chance:100,
       eventTitle:"Time to Eat",
@@ -67,7 +67,6 @@ export default class Event {
     keysArray.forEach((item) => {
       eventArray.push([eventObj[item].time, eventObj[item]]);
     });
-    console.log(eventArray);
     return eventArray;
   }
 
