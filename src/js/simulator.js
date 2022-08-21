@@ -2,13 +2,20 @@ import TimeService from "./timeService.js";
 import Score from "./score.js";
 import Day from "./day.js";
 import Event from "./event.js";
+import Cost from "./cost";
+import Dog from "./dog.js";
 
 
 export default class Simulator {
   constructor() {
+    this.userName = "";
+    this.difficuluty = 1; //will scale difficulty functionality aka increase chance of disasters. randomize time more? add *extra* events?
     this.score = new Score();
     this.event = new Event();
+    this.cost = new Cost();
+    this.dog = new Dog();
     this.eventLog = [];
+    this.stopWatch = new TimeService();
   }
 
   simStart(){
@@ -19,19 +26,20 @@ export default class Simulator {
 
   startDay(day) {
     const eventArray = day.eventsList;
-    eventArray.forEach(item => {
+    eventArray.forEach((item) => {
       let time = item[0];
       const rTime = TimeService.randomizeTime(time, 0); //randomizes time. Will add "randomValue" to event object at some point
       
       function packager(){
-        this.eventRun(item[1], this.score, this.eventLog);
+        this.eventRun(item[1]);
+        this.eventHold = item[1];
       }
       
       TimeService.timer(rTime, packager.bind(this), day.dayNumber);
     });
   }
 
-  async eventRun(infoObject, score, eventLog) {
+  async eventRun(infoObject) {
     const modal = document.getElementById("myModal");
     modal.style.display = "block";
 
@@ -47,7 +55,7 @@ export default class Simulator {
     //search for items, if not found, promt user to buy items
     // if (searchItems(items) === false){buyItems(items)}; 
 
-    let element = document.getElementById("acceptButton"); //change button name. Might have to pass into function later.
+    let element = document.getElementById("acceptButton");
     await Simulator.clickListener(element,"click", stopWatch);
     
     modal.style.display = "none"; //close modal
@@ -56,13 +64,34 @@ export default class Simulator {
 
     document.getElementById("eventText").innerText = null;//display text
 
-    score.calculateScore(stopWatch.duration);
+    this.score.calculateScore(stopWatch.duration);
 
     const timeStamp = new Date(); //could package date better. Little long right now
-    let logArray = [`${timeStamp.toString()}, ${infoObject["eventTitle"]}, Score = ${score.score}`]; //find a way to package score
-    eventLog.push(logArray);
-    
+    let logArray = [`${timeStamp.toString()}, ${infoObject["eventTitle"]}, Score = ${this.score.score}`]; //find a way to package score
+    this.eventLog.push(logArray);
   }
+
+  // eventEnd() {
+  //   if (this.eventHold) {
+  //     this.stopWatch.stopWatch();
+
+  //     const infoObject = this.eventHold[0];
+  //     const score = this.score;
+
+  //     modal.style.display = "none"; //close modal
+
+  //     document.getElementById("eventTitle").innerText = null;//display title
+
+  //     document.getElementById("eventText").innerText = null;//display text
+
+  //     score.calculateScore(stopWatch.duration);
+
+  //     const timeStamp = new Date(); //could package date better. Little long right now
+  //     let logArray = [`${timeStamp.toString()}, ${infoObject["eventTitle"]}, Score = ${score.score}`]; //find a way to package score
+  //     eventLog.push(logArray);
+  //   } 
+  // }
+
 
   static clickListener(element, listenerName, stopWatch) {
     return new Promise(function (resolve) {
@@ -74,7 +103,4 @@ export default class Simulator {
       element.addEventListener(listenerName, listener);
     });
   }
-
-
-
 }
