@@ -50,40 +50,25 @@ export default class Simulator {
 
     document.getElementById("eventText").innerText = infoObject.eventText;//display text
 
-    // 1 - check if the item displayed in the DOM actually exists in the itemArray in the Cost objecy 
+    if (infoObject.items !== 0) {
+      let i=0;
+      while ( i < infoObject.length) {
+        if (this.searchInventory(infoObject.items[i])) {
+          this.cost.buyItem(infoObject.items[i]);
+        }
+      }
+    }
 
-    //function searchItems(itemToBeSearched){ 
-        //for const[key,value] in infoObject.itemPrices{
-            //if (itemToBeSearched === key){
-                //return true; 
-            //} else {
-                //return false; 
-            //}
-        //}
-    //}
 
-    // 2 - search item price, will only return price if item already exists
+    // 3 - search item price, will only return price if item already exists
 
     // function searchItemPrice(searchItems){ 
         //let itemPriceToBeAdded; 
         //if true {
-          
+            //total += item
         //}
     //}
     
-    //3 - 
-    //function searchInventory(itemToBeSearched, inventoryArray) {
-      //let i = 0 
-      //for (i in inventoryArray){}
-      //while(i < inventoryArray.length){
-        //if (itemToBeSearched === inventoryArray[i]){
-              //return true; 
-          //} else {
-             //return false; 
-          //}
-      //}
-    //}
-    //}; 
 
     //search for items, if not found, prompt user to buy items
 
@@ -122,4 +107,30 @@ export default class Simulator {
     //pushes items to inventory
   }
 
+  searchInventory(itemToBeSearchedArray, inventoryArray) {
+
+    if (itemToBeSearchedArray.length === 0){ 
+      return false;
+    }
+
+    for (let i =  0; i < inventoryArray.length; i++){
+      if (itemToBeSearchedArray === inventoryArray[i]){
+        return true; 
+      } else { 
+        return false; 
+      }
+    }
+  
+
+  
+}
+
+
+//eventRun function will call a forEach loop on each item in the infoObject.items in order to retrieve price 
+
+  // external - search inventory function will be used as a callback function first to check if item to be purchased already exists in the inventory 
+
+  // external - if it does not exists, the buy function will be executed 
+
+//else the eventRun function will be quit
 }

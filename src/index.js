@@ -1,29 +1,10 @@
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './css/styles.css';
-<<<<<<< HEAD
-import Cost from './js/cost';
-
-
-//check to see if inventory already exists in the 
-//dog object inventory 
-
-// if dog.inventory.includes(itemPrices.keys){
-  //Cost.totalCost += 0; 
-  //else {
-    //Cost.totalCost += itemPrices.value;
-  }
-}
-//
-=======
 import Simulator from './js/simulator';
-
-
 
 let sim = new Simulator();
 sim.simStart();
-
-
 
 //create button to see log 
 let logButton = document.getElementById("dispLog"); 
@@ -114,4 +95,4 @@ window.onclick = function(event) {
 //   setTimeout(function(){stopWatch.resetWatch()}, 3000);
 // }
 // *****************For Testing StopWatch********************
->>>>>>> main
+
