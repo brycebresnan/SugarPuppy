@@ -10,10 +10,12 @@ export default class Simulator {
   constructor() {
     this.userName = "";
     this.difficuluty = 1; //will scale difficulty functionality aka increase chance of disasters. randomize time more? add *extra* events?
+    this.duration = 1;
     this.score = new Score();
     this.event = new Event();
     this.cost = new Cost();
     this.dog = new Dog();
+    this.daysList = this.createDays();
     this.eventLog = [];
     this.stopWatch = new TimeService();
   }
@@ -84,6 +86,18 @@ export default class Simulator {
     //gets items from infoObject
     //increments cost by item price
     //pushes items to inventory
+  }
+
+  createDays() {
+    let daysList = [];
+    let i=0;
+    while (i < (this.duration)) {
+      const eventList = Event.eventPackager(this.event);
+      let day = new Day(i+1, eventList);
+      daysList.push(day);
+      i++
+    }
+    console.log(daysList);
   }
 
 }
