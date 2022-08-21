@@ -13,7 +13,7 @@ sim.simStart();
 //create button to see log 
 let logButton = document.getElementById("dispLog"); 
 let x = 0;
-logButton.addEventListener("click", () => document.getElementById("eventLog").innerText = x++ + sim.eventLog + " also " + sim.eventHold.eventTitle);
+logButton.addEventListener("click", () => document.getElementById("eventLog").innerText = x++ + sim.eventLog);
 
 let acceptButton = document.getElementById("acceptButton");
 acceptButton.addEventListener("click", sim.eventEnd.bind(sim));
@@ -21,7 +21,8 @@ acceptButton.addEventListener("click", sim.eventEnd.bind(sim));
 
 // *****************For Modal Alert Testing********************
 // Get the modal
-const modal = document.getElementById("myModal");
+const alertModal = document.getElementById("alertModal");
+const clockModal = document.getElementById("clockModal");
 
 // Get the button that opens the modal
 const btn = document.getElementById("myBtn");
@@ -31,19 +32,19 @@ const span = document.getElementsByClassName("close")[0];
 
 // When the user clicks on the button, open the modal
 btn.onclick = function() {
-  modal.style.display = "block";
+  alertModal.style.display = "block";
 };
 
 // When the user clicks on <span> (x), close the modal
 span.onclick = function() {
-  modal.style.display = "none";
+  alertModal.style.display = "none";
 
 };
 
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
+  if (event.target == alertModal) {
+    alertModal.style.display = "none";
   }
 };
 // *****************For Modal Alert Testing********************
