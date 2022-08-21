@@ -3,6 +3,7 @@ export default class Cost {
   constructor {
 
     this.totalCost = 0;  
+    this.inventory = [], //intialize empty array 
 
   }
 
