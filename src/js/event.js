@@ -3,14 +3,14 @@
 export default class Event {
   constructor() {
     this.morningWalk = {
-      time:"7:00",
-      eventTitle:"Walk the Dog",
+      time:"21:16",
+      eventTitle:"Morning Walk!",
       eventText:"Description of the event",
       items:["Leash","Collar"]
     };
     this.eveningWalk = {
-      time:"10:00",
-      eventTitle:"Walk the Dog",
+      time:"21:17",
+      eventTitle:"Evening Walk!",
       eventText:"Description of the event",
       items:["Leash","Collar"]
     };
@@ -18,12 +18,12 @@ export default class Event {
 
   static eventPackager(eventObj) {
     let keysArray = Object.keys(eventObj);
-    let eventArray = []
-    keysArray.forEach((item, index) => {
+    let eventArray = [];
+    keysArray.forEach((item) => {
       eventArray.push([eventObj[item].time, eventObj[item]]);
-  });
+    });
 
-    console.log(eventArray);
+    return eventArray;
   }
 
 
