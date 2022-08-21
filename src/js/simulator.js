@@ -85,6 +85,7 @@ export default class Simulator {
     //gets items from infoObject
     //increments cost by item price
     //pushes items to inventory
+
   }
 
 }
