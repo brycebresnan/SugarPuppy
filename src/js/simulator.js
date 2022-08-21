@@ -43,8 +43,7 @@ export default class Simulator {
     const modal = document.getElementById("myModal");
     modal.style.display = "block";
 
-    let stopWatch = new TimeService();
-    stopWatch.startWatch(); //Starts the timer for the event
+    this.stopWatch.startWatch(); //Starts the timer for the event
 
     document.getElementById("eventTitle").innerText = infoObject.eventTitle;//display title
 
@@ -54,53 +53,43 @@ export default class Simulator {
 
     //search for items, if not found, promt user to buy items
     // if (searchItems(items) === false){buyItems(items)}; 
-
-    let element = document.getElementById("acceptButton");
-    await Simulator.clickListener(element,"click", stopWatch);
-    
-    modal.style.display = "none"; //close modal
-
-    document.getElementById("eventTitle").innerText = null;//display title
-
-    document.getElementById("eventText").innerText = null;//display text
-
-    this.score.calculateScore(stopWatch.duration);
-
-    const timeStamp = new Date(); //could package date better. Little long right now
-    let logArray = [`${timeStamp.toString()}, ${infoObject["eventTitle"]}, Score = ${this.score.score}`]; //find a way to package score
-    this.eventLog.push(logArray);
   }
 
-  // eventEnd() {
-  //   if (this.eventHold) {
-  //     this.stopWatch.stopWatch();
+  eventEnd() {
+    if (!this.eventHold) {
+      return;
+    } else {
+      this.stopWatch.stopWatch();
+   
+      const modal = document.getElementById("myModal");
 
-  //     const infoObject = this.eventHold[0];
-  //     const score = this.score;
+      const infoObject = this.eventHold;
+      const score = this.score;
 
-  //     modal.style.display = "none"; //close modal
+      modal.style.display = "none"; //close modal
 
-  //     document.getElementById("eventTitle").innerText = null;//display title
+      document.getElementById("eventTitle").innerText = null;//display title
 
-  //     document.getElementById("eventText").innerText = null;//display text
+      document.getElementById("eventText").innerText = null;//display text
 
-  //     score.calculateScore(stopWatch.duration);
+      this.score.calculateScore(this.stopWatch.duration);
+      this.stopWatch.resetWatch()
 
-  //     const timeStamp = new Date(); //could package date better. Little long right now
-  //     let logArray = [`${timeStamp.toString()}, ${infoObject["eventTitle"]}, Score = ${score.score}`]; //find a way to package score
-  //     eventLog.push(logArray);
-  //   } 
+      const timeStamp = new Date(); //could package date better. Little long right now
+      let logArray = [`${timeStamp.toString()}, ${infoObject["eventTitle"]}, Score = ${this.score.score}`]; //find a way to package score
+      this.eventLog.push(logArray);
+    }
+  }
+
+
+  // static clickListener(element, listenerName, stopWatch) {
+  //   return new Promise(function (resolve) {
+  //     let listener = event => {
+  //       stopWatch.stopWatch();
+  //       element.removeEventListener(listenerName, listener); 
+  //       resolve(event);
+  //     };
+  //     element.addEventListener(listenerName, listener);
+  //   });
   // }
-
-
-  static clickListener(element, listenerName, stopWatch) {
-    return new Promise(function (resolve) {
-      let listener = event => {
-        stopWatch.stopWatch();
-        element.removeEventListener(listenerName, listener); 
-        resolve(event);
-      };
-      element.addEventListener(listenerName, listener);
-    });
-  }
 }
