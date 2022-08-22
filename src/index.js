@@ -25,6 +25,7 @@ const alertModal = document.getElementById("alertModal");
 const introModal = document.getElementById("introModal");
 const score = document.getElementById("score");
 const clockModal = document.getElementById("clockModal");
+//const span = document.getElementById()
 
 // Get the button that opens the modal
 const alertBtn = document.getElementById("alertBtn");
