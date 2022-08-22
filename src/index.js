@@ -57,14 +57,6 @@ scoreCloseBtn.onclick = function () {
   score.style.display = "none";
 }
 
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function (event) {
-  if (event.target == modal) {
-    alertModal.style.display = "none";
-    introModal.style.display = "none";
-    //score.style.display = "none";
-  }
-};
 // *****************For Modal Alert Testing********************
 
 // *****************For Testing Timer********************
