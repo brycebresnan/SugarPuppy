@@ -51,14 +51,6 @@ export default class Simulator {
 
     document.getElementById("eventText").innerText = infoObject.eventText;//display text
 
-    if (infoObject.items) {};//display items in DOM
-
-    if (!searchInventory(infoObject.items)) {
-      eventBuy(infoObject.items)
-     //find the prices by string in Cost.prices
-     //increment cost in this.cost.incrementCost(infoObject.items)
-     //display the cost?? 
-    }
   }
 
   eventEnd() {
