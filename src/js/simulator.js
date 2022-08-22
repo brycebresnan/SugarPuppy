@@ -40,8 +40,8 @@ export default class Simulator {
   }
 
   eventRun(infoObject) {
-    const modal = document.getElementById("myModal");
-    modal.style.display = "block";
+    const alertModal = document.getElementById("alertModal");
+    alertModal.style.display = "block";
 
     this.stopWatch.startWatch(); //Starts the timer for the event
 
@@ -61,11 +61,11 @@ export default class Simulator {
     } else {
       this.stopWatch.stopWatch();
 
-      const modal = document.getElementById("myModal");
+      const alertModal = document.getElementById("alertModal");
 
       const infoObject = this.eventHold;
 
-      modal.style.display = "none"; //close modal
+      alertModal.style.display = "none"; //close modal
 
       document.getElementById("eventTitle").innerText = null;//display title
 
