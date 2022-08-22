@@ -11,7 +11,7 @@ sim.simStart();
 
 
 //create button to see log 
-let logButton = document.getElementById("dispLog"); 
+let logButton = document.getElementById("dispLog");
 let x = 0;
 logButton.addEventListener("click", () => document.getElementById("eventLog").innerText = x++ + sim.eventLog);
 
@@ -22,29 +22,47 @@ acceptButton.addEventListener("click", sim.eventEnd.bind(sim));
 // *****************For Modal Alert Testing********************
 // Get the modal
 const alertModal = document.getElementById("alertModal");
+const introModal = document.getElementById("introModal");
+const score = document.getElementById("score");
 const clockModal = document.getElementById("clockModal");
 
 // Get the button that opens the modal
-const btn = document.getElementById("myBtn");
+const alertBtn = document.getElementById("alertBtn");
+const introBtn = document.getElementById("introBtn");
+const scoreBtn = document.getElementById("scoreBtn");
 
 // Get the <span> element that closes the modal
-const span = document.getElementsByClassName("close")[0];
-
+const alertCloseBtn = document.getElementById("alertClose");
+const introCloseBtn = document.getElementById("introClose");
+const scoreCloseBtn = document.getElementById("scoreClose");
 // When the user clicks on the button, open the modal
-btn.onclick = function() {
+alertBtn.onclick = function () {
   alertModal.style.display = "block";
+};
+introBtn.onclick = function () {
+  introModal.style.display = "block";
+};
+scoreBtn.onclick = function () {
+  score.style.display = "block";
 };
 
 // When the user clicks on <span> (x), close the modal
 span.onclick = function() {
   alertModal.style.display = "none";
 
+introCloseBtn.onclick = function () {
+  introModal.style.display = "none";
 };
+scoreCloseBtn.onclick = function () {
+  score.style.display = "none";
+}
 
 // When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-  if (event.target == alertModal) {
+window.onclick = function (event) {
+  if (event.target == modal) {
     alertModal.style.display = "none";
+    introModal.style.display = "none";
+    //score.style.display = "none";
   }
 };
 // *****************For Modal Alert Testing********************
@@ -78,7 +96,7 @@ window.onclick = function(event) {
 //           console.log("Click!")
 //           let time = stopWatch.stopWatch();
 //           console.log(time);
-//           element.removeEventListener(listenerName, listener); 
+//           element.removeEventListener(listenerName, listener);
 //           resolve(event);
 //       };
 //       element.addEventListener(listenerName, listener);

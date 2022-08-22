@@ -1,23 +1,83 @@
 body {
   font-family: Arial, Helvetica, sans-serif;
-  background-color:rgb(45, 45, 45);
-  color: rgb(209, 205, 199);
+  background-color: rgb(185, 185, 185);
+  background-image: url('../img/backgr.jpg');
+  display: flex;
+  justify-content: space-between;
+  border: solid, blue;
+}
+
+h1 {
+  font-weight: 900;
+}
+.container {
+  padding: 10px;
+  background-color: rgb(239, 239, 239);
+  /* margin: 10px;
+  display: flex;
+  justify-content: space-between;
+  border: 4mm ridge, blue; */
+  margin: auto;
+  width: 60%;
+  border: 2mm ridge rgb(255, 195, 55);
+  padding: auto;
+  /* display: flex; */
+}
+
+.links {
+  border: solid, rgb(83, 39, 39);
+  background-color: rgb(252, 252, 252);
+  margin: auto;
+  padding: auto;
+  /* display: flex; */
+  justify-content: space-evenly;
+
+}
+
+#about {
+  background-color: cornflowerblue;
+  object-position: center;
+  /* display: flex; */
+}
+
+.banner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: auto;
+  /* display: flex; */
+}
+
+#new-user {
+  /* visibility: block; */
+  font-family: Arial, Helvetica, sans-serif;
+  /* background-color: rgb(6, 2, 6);
+  color: rgb(252, 252, 252); */
 }
 
 /* The Modal (background) */
 .modal {
   color: rgb(50, 50, 50);
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
-  padding-top: 100px; /* Location of the box */
+  display: none;
+  /* Hidden by default */
+  position: fixed;
+  /* Stay in place */
+  z-index: 1;
+  /* Sit on top */
+  padding-top: 100px;
+  /* Location of the box */
   left: 0;
   top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  width: 100%;
+  /* Full width */
+  height: 100%;
+  /* Full height */
+  overflow: auto;
+  /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0);
+  /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4);
+  /* Black w/ opacity */
 }
 
 /* Modal Content */
@@ -42,11 +102,15 @@ body {
   text-decoration: none;
   cursor: pointer;
 }
+
 .modal-head {
   padding: 2px 16px;
 
 }
-.modal-body {padding: 2px 16px;}
+
+.modal-body {
+  padding: 2px 16px;
+}
 
 .modal-foot {
   padding: 2px 16px;
