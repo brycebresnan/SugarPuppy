@@ -55,15 +55,16 @@ export default class Simulator {
     //search for items, if not found, promt user to buy items
     // if (searchItems(items) === false){buyItems(items)}; 
 
-    if (infoObject.items !== 0) {
-      let i=0;
-      while ( i < infoObject.length) {
-        if (this.searchInventory(infoObject.items[i])) {
-          this.cost.buyItem(infoObject.items[i]);
-        }
-      }
-    }
-  }
+  //   if (infoObject.items !== 0) {
+  //     let i=0;
+  //     while ( i < infoObject.length) {
+  //       if (this.searchInventory(infoObject.items[i],this.inventory)) {
+  //         this.cost.buyItem(infoObject.items[i]);
+  //         i++;
+  //       }
+  //     }
+  //   }
+  // }
 
   eventEnd() {
     if (!this.eventHold) {
@@ -95,10 +96,17 @@ export default class Simulator {
 
   }
 
-  eventBuy() {
-    //gets items from infoObject
-    //increments cost by item price
-    //pushes items to inventory
-  }
+  // searchInventory(infoObjectItem,inventory){
+
+  //   let i = 0; 
+  //   while (i < inventory.lengh ){ 
+  //     if (inventory[i] === infoObjectItem){
+  //       return true 
+  //       i++;
+  //     }
+  //   }return false
+  //   //returns boolean
+
+  // }
 
 }
