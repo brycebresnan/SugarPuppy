@@ -15,7 +15,7 @@
     <button id="alertBtn">Open Alert</button> <!-- This is for testing -->
     <button id="introBtn">Open Intro</button> <!-- This is for testing -->
     <button id="scoreBtn">Score</button>
-  </div>
+  
 
     <!-- The Alert Modal -->
   <div id="alertModal" class="modal">
@@ -59,6 +59,7 @@
       <!-- INtro Modal content -->
       <div class="modal-head">
         <h2>Welcome to Peti!</h2>
+        <p>Please enter your information. When you are finished, click Start to begin the simulation!</p>
       </div>
       <div class="modal-body">
         <form id="new-user">
@@ -83,27 +84,22 @@
               <li>
                 <label for="new-user-dog-breed">select Breed</label>
                 <select id="dog" name="breed" size="1">
-                  <option value="german shepard">german shepard</option>
-                  <option value="golden retriever">golden retriever</option>
-                  <option value="bulldog">bulldog</option>
-                  <option value="poodle">poodle</option>
+                  <option value="german shepard">German Shepard</option>
+                  <option value="golden retriever">Golden Retriever</option>
+                  <option value="bulldog">Bulldog</option>
+                  <option value="poodle">Poodle</option>
                 </select>
               </li>
-              <li>
-                <button type="submit">Start!</button>
-              </li>
-              <li>
-                <input type="reset">
-              </li>
+                
             </ul>
           </div>
         </form>
       </div>
       <div class="modal-foot">
+        <input type="reset" form="new-user">
+        <button type="submit" form="new-user">Start!</button>
         <button id="introClose" class="close">Close</button>
-        
-
-
+        </div>
       </div>
     </div>
   </div>
