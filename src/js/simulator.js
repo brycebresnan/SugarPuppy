@@ -14,6 +14,7 @@ export default class Simulator {
     this.score = new Score();
     this.event = new Event();
     this.cost = new Cost();
+    this.inventory = []; 
     this.dog = new Dog();
     this.daysList = this.createDays();
     this.eventLog = [];
@@ -55,18 +56,23 @@ export default class Simulator {
     //search for items, if not found, promt user to buy items
     // if (searchItems(items) === false){buyItems(items)}; 
 
-  //   if (infoObject.items !== 0) {
-  //     let i=0;
-  //     while ( i < infoObject.length) {
-  //       if (this.searchInventory(infoObject.items[i],this.inventory)) {
-  //         this.cost.buyItem(infoObject.items[i]);
-  //         i++;
-  //       }
-  //     }
-  //   }
-  // }
+    if (infoObject.items.length !== 0) {
+      let i=0;
+      while ( i < infoObject.length) {
+        if (this.searchInventory(infoObject.items[i],this.inventory) === false) {
+          this.cost.buyItem(infoObject.items[i]);
+          this.inventory.push(infoObject[i]);
+          i++;
+        } 
+      }
+    } else { 
+      this.inventory; //want
+    }
 
-  eventEnd() {
+  
+  }
+  eventEnd(){
+
     if (!this.eventHold) {
       return;
     } else {
@@ -92,21 +98,19 @@ export default class Simulator {
     }
   }
 
-  eventSkip() {
-
-  }
-
-  // searchInventory(infoObjectItem,inventory){
-
-  //   let i = 0; 
-  //   while (i < inventory.lengh ){ 
-  //     if (inventory[i] === infoObjectItem){
-  //       return true 
-  //       i++;
-  //     }
-  //   }return false
-  //   //returns boolean
-
+  // eventSkip() {
   // }
 
+  searchInventory(infoObjectItem,inventory){
+
+    for (let items of inventory ){ 
+      if (inventory[items] === infoObjectItem){
+          return true; 
+          } 
+        }
+  }
+
 }
+
+
+
