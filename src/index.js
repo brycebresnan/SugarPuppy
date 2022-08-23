@@ -31,6 +31,13 @@ const alertBtn = document.getElementById("alertBtn");
 const introBtn = document.getElementById("introBtn");
 const scoreBtn = document.getElementById("scoreBtn");
 
+// Displaying intro new user 
+const getFirst = document.getElementById("new-user-first-name");
+const getLast = document.getElementById("new-user-last-name");
+const getDog = document.getElementById("new-user-dog-name");
+const getBreed = document.getElementById("dog");
+const getAge = document.getElementById("new-user-dog-age")
+
 // Get the <span> element that closes the modal
 const alertCloseBtn = document.getElementById("alertClose");
 const introCloseBtn = document.getElementById("introClose");
@@ -47,7 +54,7 @@ scoreBtn.onclick = function () {
 };
 
 // When the user clicks on <span> (x), close the modal
-span.onclick = function() {
+alertCloseBtn.onclick = function () {
   alertModal.style.display = "none";
 }
 introCloseBtn.onclick = function () {
@@ -56,6 +63,8 @@ introCloseBtn.onclick = function () {
 scoreCloseBtn.onclick = function () {
   score.style.display = "none";
 }
+
+
 
 // *****************For Modal Alert Testing********************
 
