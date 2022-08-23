@@ -70,6 +70,7 @@ export default class Simulator {
   }
   eventEnd(){
 
+  eventEnd() {
     if (!this.eventHold) {
       return;
     } else {
@@ -95,8 +96,17 @@ export default class Simulator {
     }
   }
 
-  // eventSkip() {
-  // }
+  eventSkip() {
+
+  }
+
+  eventBuy() {
+    //gets items from infoObject
+    //increments cost by item price
+    //pushes items to inventory
+
+    //for
+  }
 
   searchInventory(infoObjectItem,inventory){
 
@@ -108,8 +118,17 @@ export default class Simulator {
           }
         }
   }
-
-}
-
-
+  
+  createDays() {
+    let daysList = [];
+    let i=0;
+    while (i < (this.duration)) {
+      const eventList = Event.eventPackager(this.event);
+      let day = new Day(i+1, eventList);
+      daysList.push(day);
+      i++;
+    }
+    return daysList;
+  }
+>>>>>>> KS-2
 
