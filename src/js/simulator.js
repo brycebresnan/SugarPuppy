@@ -66,9 +66,7 @@ export default class Simulator {
         } 
       }
     } 
-
   }
-  eventEnd(){
 
   eventEnd() {
     if (!this.eventHold) {
@@ -118,7 +116,7 @@ export default class Simulator {
           }
         }
   }
-  
+
   createDays() {
     let daysList = [];
     let i=0;
@@ -130,5 +128,4 @@ export default class Simulator {
     }
     return daysList;
   }
->>>>>>> KS-2
-
+}
