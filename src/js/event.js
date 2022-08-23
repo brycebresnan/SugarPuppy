@@ -9,7 +9,7 @@ export default class Event {
       items:["Leash","Collar"]
     };
     this.eveningWalk = {
-      time:'18:14',
+      time:"20:21",
       random:1,
       chance:100,
       eventTitle:"Evening Walk",

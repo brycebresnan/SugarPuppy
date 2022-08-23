@@ -56,15 +56,20 @@ export default class Simulator {
     //search for items, if not found, promt user to buy items
     // if (searchItems(items) === false){buyItems(items)}; 
 
-    if (infoObject.items.length !== 0) {
-      let i = 0;
-      while ( i < infoObject.items.length) {
-        if (this.searchInventory(infoObject.items[i],this.inventory) === false) {
-          this.cost.buyItem(infoObject.items[i]);
-          this.inventory.push(infoObject[i]);
-          i++;
-        } 
-      }
+     if (infoObject.items.length !== 0) {
+       let i = 0;
+       console.log(infoObject.items.length);
+        while( i < 2) {
+        if (!this.inventory.includes(infoObject.items[i])) {
+           this.cost.buyItem(infoObject.items[i]);
+           this.inventory.push(infoObject.items[i]);
+           i++;
+         } else{
+          console.log(this.inventory.includes(infoObject.items[i]))
+          console.log(i)
+          break; 
+         }
+        }
     } 
   }
 
@@ -88,7 +93,7 @@ export default class Simulator {
       this.stopWatch.resetWatch();
       
       const timeStamp = new Date(); //could package date better. Little long right now
-      let logArray = [`${timeStamp.toString()}, ${infoObject["eventTitle"]}, Score = ${this.score.score}, 'Cost' = ${this.cost}, 'Inventory = ${this.inventory}`]; //find a way to package score
+      let logArray = [`${timeStamp.toString()}, ${infoObject["eventTitle"]}, Score = ${this.score.score}, 'Cost' = ${this.cost.totalCost}, 'Inventory = ${this.inventory}`]; //find a way to package score
       this.eventLog.push(logArray);
       this.eventHold = null;
     }
@@ -104,17 +109,6 @@ export default class Simulator {
     //pushes items to inventory
 
     //for
-  }
-
-  searchInventory(infoObjectItem,inventory){
-
-    for (let items of inventory ){ 
-      if (inventory[items] === infoObjectItem){
-          return true; 
-          } else {
-            return false; 
-          }
-        }
   }
 
   createDays() {
