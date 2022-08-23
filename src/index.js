@@ -48,19 +48,12 @@ scoreBtn.onclick = function () {
 // When the user clicks on <span> (x), close the modal
 alertCloseBtn.onclick = function () {
   alertModal.style.display = "none";
-  introModal.style.display = "none";
-  score.style.display = "none";
-
 };
 
 introCloseBtn.onclick = function () {
-  alertModal.style.display = "none";
   introModal.style.display = "none";
-  score.style.display = "none";
 };
 scoreCloseBtn.onclick = function () {
-  alertModal.style.display = "none";
-  introModal.style.display = "none";
   score.style.display = "none";
 }
 

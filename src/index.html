@@ -15,100 +15,102 @@
     <button id="alertBtn">Open Alert</button> <!-- This is for testing -->
     <button id="introBtn">Open Intro</button> <!-- This is for testing -->
     <button id="scoreBtn">Score</button>
-  </div>
 
 
-  <div id="alertModal" class="modal">
     <!-- The Alert Modal -->
-    <div class="modal-content">
-      <!-- Alert Modal content -->
-      <div class="modal-head">
-        <h2 id="eventTitle">Test Title</h2>
+    <div id="alertModal" class="modal">
+
+      <div class="modal-content">
+        <!-- Alert Modal content -->
+        <div class="modal-head">
+          <h2 id="eventTitle">Test Title</h2>
+        </div>
+        <div class="modal-body">
+          <p id="eventText">Some text in the Modal Body</p>
+          <h3 id="eventItems">Item1, Item2</h3>
+          <h3 id="eventCost">Total Cost: $100</h3>
+        </div>
+        <div class="modal-foot">
+          <button id="alertClose" class="close">Close</button>
+          <button id="acceptButton">Accept</button>
+          <button id="buyButton">Buy Items</button>
+        </div>
       </div>
-      <div class="modal-body">
-        <p id="eventText">Some text in the Modal Body</p>
-        <h3 id="eventItems">Item1, Item2</h3>
-        <h3 id="eventCost">Total Cost: $100</h3>
+    </div>
+
+    <div id="score" class="modal">
+      <div class="modal-content">
+        <div class="modal-head">
+        </div>
+        <div class="modal-body">
+          <samp value="result">Score</samp>
+        </div>
+        <div class="modal-foot">
+          <button id="scoreClose" class="close">Close</button>
+        </div>
+
       </div>
       <div class="modal-foot">
-        <button id="alertClose" class="close">Close</button>
-        <button id="acceptButton">Accept</button>
-        <button id="buyButton">Buy Items</button>
+        <button id="scoreClose" class="close">Close</button>
       </div>
     </div>
-  </div>
-
-  <div id="score" class="modal">
-    <div class="modal-content">
-      <div class="modal-head">
-      </div>
-      <div class="modal-body">
-        <samp value="result">Score</samp>
-      </div>
-    </div>
-    <div class="modal-foot">
-      <button id="scoreClose" class="close">Close</button>
-    </div>
-  </div>
 
 
-  <div id="introModal" class="modal">
-    <!-- The Intro Modal -->
+    <div id="introModal" class="modal">
+      <!-- The Intro Modal -->
 
-    <div class="modal-content">
-      <!-- INtro Modal content -->
-      <div class="modal-head">
-        <h2>Welcome to Peti!</h2>
-      </div>
-      <div class="modal-body">
-        <form id="new-user">
-          <div id="user-info">
-            <ul>
-              <li>
-                <label for="new-user-first-name">First Name</label>
-                <input type="text" id="new-user-first-name" name="new-user-first-name">
-              </li>
-              <li>
-                <label for="new-user-last-name">Last Name </label>
-                <input type="text" id="new-user-last-name" name="new-user-last-name">
-              </li>
-              <li>
-                <label for="new-user-dog-name">Dog Name </label>
-                <input type="text" id="new-user-dog-name" name="new-user-dog-name">
-              </li>
-              <li>
-                <label for="new-user-dog-age">Dog age</label>
-                <input type="number" id="new-user-dog-age" name="new-user-dog-age" min="1" max="100" value="18">
-              </li>
-              <li>
-                <label for="new-user-dog-breed">Select Breed</label>
-                <select id="dog" name="breed" size="1">
-                  <option value="german shepard">German shepard</option>
-                  <option value="golden retriever">Golden retriever</option>
-                  <option value="bulldog">Bulldog</option>
-                  <option value="poodle">Poodle</option>
-                </select>
-              </li>
-              <li>
-                <button type="submit">Start!</button>
-              </li>
-              <li>
-                <input type="reset">
-              </li>
-            </ul>
-          </div>
-        </form>
-      </div>
-      <div class="modal-foot">
-        <button id="introClose" class="close">Close</button>
+      <div class="modal-content">
+        <!-- INtro Modal content -->
+        <div class="modal-head">
+          <h2>Welcome to Peti!</h2>
+          <p>Please enter your information. When you are finished, click Start to begin the simulation!</p>
+        </div>
+        <div class="modal-body">
+          <form id="new-user">
+            <div id="user-info">
+              <ul>
+                <li>
+                  <label for="new-user-first-name">First Name</label>
+                  <input type="text" id="new-user-first-name" name="new-user-first-name">
+                </li>
+                <li>
+                  <label for="new-user-last-name">Last Name </label>
+                  <input type="text" id="new-user-last-name" name="new-user-last-name">
+                </li>
+                <li>
+                  <label for="new-user-dog-name">Dog Name </label>
+                  <input type="text" id="new-user-dog-name" name="new-user-dog-name">
+                </li>
+                <li>
+                  <label for="new-user-dog-age">Dog age</label>
+                  <input type="number" id="new-user-dog-age" name="new-user-dog-age" min="1" max="100" value="18">
+                </li>
+                <li>
+                  <label for="new-user-dog-breed">Select Breed</label>
+                  <select id="dog" name="breed" size="1">
+                    <option value="german shepard">German shepard</option>
+                    <option value="golden retriever">Golden retriever</option>
+                    <option value="bulldog">Bulldog</option>
+                    <option value="poodle">Poodle</option>
+                  </select>
+                </li>
+
+              </ul>
+            </div>
+          </form>
+        </div>
+        <div class="modal-foot">
+          <input type="reset" form="new-user">
+          <button type="submit" form="new-user">Start!</button>
+          <button id="introClose" class="close">Close</button>
+        </div>
       </div>
     </div>
-  </div>
 
 
 
 
-  <!-- <button id="toggler" onclick="toggle(`task-window`)">Start</button>
+    <!-- <button id="toggler" onclick="toggle(`task-window`)">Start</button>
   <form id="task-window">
     <p>Task Window</p>
   </form>
@@ -120,7 +122,7 @@
     </span>
   </div> -->
 
-  <!-- <script>
+    <!-- <script>
     popup();
 
     function popup() {
