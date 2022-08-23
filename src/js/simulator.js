@@ -89,6 +89,7 @@ export default class Simulator {
     //pushes items to inventory
   }
 
+  //Adding Comment to see if this works?
   createDays() {
     let daysList = [];
     let i=0;
