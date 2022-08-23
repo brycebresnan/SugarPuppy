@@ -57,19 +57,16 @@ export default class Simulator {
     // if (searchItems(items) === false){buyItems(items)}; 
 
     if (infoObject.items.length !== 0) {
-      let i=0;
-      while ( i < infoObject.length) {
+      let i = 0;
+      while ( i < infoObject.items.length) {
         if (this.searchInventory(infoObject.items[i],this.inventory) === false) {
           this.cost.buyItem(infoObject.items[i]);
           this.inventory.push(infoObject[i]);
           i++;
         } 
       }
-    } else { 
-      this.inventory; //want
-    }
+    } 
 
-  
   }
   eventEnd(){
 
@@ -92,7 +89,7 @@ export default class Simulator {
       this.stopWatch.resetWatch();
       
       const timeStamp = new Date(); //could package date better. Little long right now
-      let logArray = [`${timeStamp.toString()}, ${infoObject["eventTitle"]}, Score = ${this.score.score}`]; //find a way to package score
+      let logArray = [`${timeStamp.toString()}, ${infoObject["eventTitle"]}, Score = ${this.score.score}, 'Cost' = ${this.cost}, 'Inventory = ${this.inventory}`]; //find a way to package score
       this.eventLog.push(logArray);
       this.eventHold = null;
     }
@@ -106,7 +103,9 @@ export default class Simulator {
     for (let items of inventory ){ 
       if (inventory[items] === infoObjectItem){
           return true; 
-          } 
+          } else {
+            return false; 
+          }
         }
   }
 
