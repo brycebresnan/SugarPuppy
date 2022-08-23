@@ -9,7 +9,7 @@ import Dog from "./dog.js";
 export default class Simulator {
   constructor() {
     this.userName = "";
-    this.difficuluty = 1; //will scale difficulty functionality aka increase chance of disasters. randomize time more? add *extra* events?
+    this.difficulty = 1; //will scale difficulty functionality aka increase chance of disasters. randomize time more? add *extra* events?
     this.duration = 1;
     this.score = new Score();
     this.event = new Event();
