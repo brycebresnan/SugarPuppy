@@ -1,4 +1,3 @@
-
 export default class Dog { 
 
   // dogMoods = ['neutral','happy', 'angry','sad','deceased']

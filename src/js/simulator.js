@@ -14,11 +14,11 @@ export default class Simulator {
     this.score = new Score();
     this.event = new Event();
     this.cost = new Cost();
+    this.inventory = []; 
     this.dog = new Dog();
     this.daysList = this.createDays();
     this.eventLog = [];
     this.stopWatch = new TimeService();
-    this.inventory = [];
   }
 
   simStart(){
@@ -51,9 +51,25 @@ export default class Simulator {
 
     document.getElementById("eventText").innerText = infoObject.eventText;//display text
 
-  }
+    //if contains items, display items
 
-  eventEnd() {
+    //search for items, if not found, promt user to buy items
+    // if (searchItems(items) === false){buyItems(items)}; 
+
+    if (infoObject.items.length !== 0) {
+      let i = 0;
+      while ( i < infoObject.items.length) {
+        if (this.searchInventory(infoObject.items[i],this.inventory) === false) {
+          this.cost.buyItem(infoObject.items[i]);
+          this.inventory.push(infoObject[i]);
+          i++;
+        } 
+      }
+    } 
+
+  }
+  eventEnd(){
+
     if (!this.eventHold) {
       return;
     } else {
@@ -73,32 +89,27 @@ export default class Simulator {
       this.stopWatch.resetWatch();
       
       const timeStamp = new Date(); //could package date better. Little long right now
-      let logArray = [`${timeStamp.toString()}, ${infoObject["eventTitle"]}, Score = ${this.score.score}`]; //find a way to package score
+      let logArray = [`${timeStamp.toString()}, ${infoObject["eventTitle"]}, Score = ${this.score.score}, 'Cost' = ${this.cost}, 'Inventory = ${this.inventory}`]; //find a way to package score
       this.eventLog.push(logArray);
       this.eventHold = null;
     }
   }
 
-  eventSkip() {
+  // eventSkip() {
+  // }
 
-  }
+  searchInventory(infoObjectItem,inventory){
 
-  eventBuy() {
-    //gets items from infoObject
-    //increments cost by item price
-    //pushes items to inventory
-  }
-
-  createDays() {
-    let daysList = [];
-    let i=0;
-    while (i < (this.duration)) {
-      const eventList = Event.eventPackager(this.event);
-      let day = new Day(i+1, eventList);
-      daysList.push(day);
-      i++;
-    }
-    return daysList;
+    for (let items of inventory ){ 
+      if (inventory[items] === infoObjectItem){
+          return true; 
+          } else {
+            return false; 
+          }
+        }
   }
 
 }
+
+
+

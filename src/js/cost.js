@@ -13,10 +13,10 @@ export default class Cost {
   //potentialy could be interlinked with buttons in the UI, we should discuss this
   //during the meeting this Tuesday. 
 
-  incrementCost(object) {  //kind of tackles both cost incrementer and adding key value pairs
+  buyItem(item) {  //kind of tackles both cost incrementer and adding key value pairs
 
     for (const [key,value] of Object.entries(this.itemPrices)){
-      if (object === key) {
+      if (item === key) {
         this.totalCost = this.totalCost += value; 
       }
     }

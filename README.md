@@ -1,3 +1,10 @@
+<<<<<<< HEAD
+# Title
+
+#### By Bryce Bresnan <Bryce.Bresnan@gmail.com>
+#### By Kasidit Srisawat <paulkasidit@gmail.com>
+#### By Anthony Gladden <a.gladden360@outlook.com> 
+=======
 # Peti
 
 ### Contributors: 
@@ -5,6 +12,7 @@
 #### Kasidit Srisawat <paulkasidit@gmail.com>
 #### Paul Srisawat <pault@gmail.com>
 #### Anthony Gladden <a.gladden360@outlook.com> 
+>>>>>>> main
 
 #### Description
 

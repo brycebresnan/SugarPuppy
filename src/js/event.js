@@ -1,5 +1,3 @@
-
-
 export default class Event {
   constructor() {
     this.morningWalk = {
@@ -11,7 +9,7 @@ export default class Event {
       items:["Leash","Collar"]
     };
     this.eveningWalk = {
-      time:"02:35",
+      time:'18:14',
       random:1,
       chance:100,
       eventTitle:"Evening Walk",
