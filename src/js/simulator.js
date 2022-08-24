@@ -58,15 +58,12 @@ export default class Simulator {
 
      if (infoObject.items.length !== 0) {
        let i = 0;
-       console.log(infoObject.items.length);
-        while( i < 2) {
+        while( i < infoObject.items.length) {
         if (!this.inventory.includes(infoObject.items[i])) {
            this.cost.buyItem(infoObject.items[i]);
            this.inventory.push(infoObject.items[i]);
            i++;
          } else{
-          console.log(this.inventory.includes(infoObject.items[i]))
-          console.log(i)
           break; 
          }
         }
