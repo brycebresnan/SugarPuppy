@@ -52,6 +52,8 @@ export default class Simulator {
     document.getElementById("eventText").innerText = infoObject.eventText;//display text
 
     if (infoObject.items.length !== 0) {
+      let itemsString = infoObject.items.join(", ");
+      document.getElementById("eventItems").innerText = `You will need these: ${itemsString}`;
       let i = 0;
       while( i < infoObject.items.length) {
         if (!this.inventory.includes(infoObject.items[i])) {
@@ -80,19 +82,23 @@ export default class Simulator {
       document.getElementById("eventTitle").innerText = null;//display title
 
       document.getElementById("eventText").innerText = null;//display text
+      
+      document.getElementById("eventItems").innerText = null;
 
       this.score.calculateScore(this.stopWatch.duration);
-      this.stopWatch.resetWatch();
       
       const timeStamp = new Date(); //could package date better. Little long right now
       // let logArray = [`${timeStamp.toString()}, ${infoObject["eventTitle"]}, Score = ${this.score.score}, 'Cost' = ${this.cost.totalCost}, 'Inventory = ${this.inventory}`];
       let logObject = {
-        Time: `${timeStamp.toString()}`,
         Event: `${infoObject["eventTitle"]}`,
+        Time: `${timeStamp.toString()}`,
+        Stopwatch: `${this.stopWatch.duration}`,
         Score: `${this.score.score}`,
         Cost: `${this.cost.totalCost}`,
         Inventory: `${this.inventory}`,
       };
+
+      this.stopWatch.resetWatch();
       this.eventLog.push(logObject);
       this.eventHold = null;
     }
