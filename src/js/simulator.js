@@ -102,6 +102,7 @@ export default class Simulator {
 
       this.stopWatch.resetWatch();
       this.eventLog.push(logObject);
+      this.displayLog()
       this.eventHold = null;
     }
   }
