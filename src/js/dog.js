@@ -11,8 +11,6 @@ export default class Dog {
     this.image = image; //not sure if we need this 
     this.health = 100; 
     this.status = ""; //renamed from status to current state, 
-                                // because there might be conflicts to
-                                // an already existing variable 
     this.happiness = 100; 
     this.inventory = []; //intialize empty array Consider moving to simulator 
   }

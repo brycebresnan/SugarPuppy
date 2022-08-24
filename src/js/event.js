@@ -1,15 +1,15 @@
 export default class Event {
   constructor() {
     this.morningWalk = {
-      time:"02:45",
+      time:"19:40",
       random:1,
       chance:100,
       eventTitle:"Morning Walk",
-      eventText:"Description of the event",
+      eventText:"Take your dog for a walk!",
       items:["Leash","Collar"]
     };
     this.eveningWalk = {
-      time:"20:21",
+      time:"19:41",
       random:1,
       chance:100,
       eventTitle:"Evening Walk",
@@ -17,7 +17,7 @@ export default class Event {
       items:["Leash","Collar"]
     };
     this.foodMorning = {
-      time:"02:36",
+      time:"19:43",
       random:0,
       chance:100,
       eventTitle:"Time to Eat",

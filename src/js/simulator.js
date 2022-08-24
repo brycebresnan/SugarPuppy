@@ -53,7 +53,7 @@ export default class Simulator {
 
     if (infoObject.items.length !== 0) {
       let i = 0;
-        while( i < infoObject.items.length) {
+      while( i < infoObject.items.length) {
         if (!this.inventory.includes(infoObject.items[i])) {
           this.cost.buyItem(infoObject.items[i]);
           this.inventory.push(infoObject.items[i]);
@@ -99,8 +99,6 @@ export default class Simulator {
     //gets items from infoObject
     //increments cost by item price
     //pushes items to inventory
-
-    //for
   }
 
   createDays() {

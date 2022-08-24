@@ -50,13 +50,13 @@ scoreBtn.onclick = function () {
 // When the user clicks on <span> (x), close the modal
 alertCloseBtn.onclick = function() {
   alertModal.style.display = "none";
-}
+};
 introCloseBtn.onclick = function () {
   introModal.style.display = "none";
 };
 scoreCloseBtn.onclick = function () {
   score.style.display = "none";
-}
+};
 
 // *****************For Modal Alert Testing********************
 
