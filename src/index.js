@@ -12,8 +12,7 @@ sim.simStart();
 
 //create button to see log 
 let logButton = document.getElementById("dispLog");
-let x = 0;
-logButton.addEventListener("click", () => document.getElementById("eventLog").innerText = x++ + sim.eventLog);
+logButton.addEventListener("click", () => sim.displayLog());
 
 let acceptButton = document.getElementById("acceptButton");
 acceptButton.addEventListener("click", sim.eventEnd.bind(sim));
