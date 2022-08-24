@@ -51,11 +51,6 @@ export default class Simulator {
 
     document.getElementById("eventText").innerText = infoObject.eventText;//display text
 
-    //if contains items, display items
-
-    //search for items, if not found, promt user to buy items
-    // if (searchItems(items) === false){buyItems(items)}; 
-
     if (infoObject.items.length !== 0) {
       let i = 0;
         while( i < infoObject.items.length) {
