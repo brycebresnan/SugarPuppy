@@ -56,17 +56,17 @@ export default class Simulator {
     //search for items, if not found, promt user to buy items
     // if (searchItems(items) === false){buyItems(items)}; 
 
-     if (infoObject.items.length !== 0) {
-       let i = 0;
+    if (infoObject.items.length !== 0) {
+      let i = 0;
         while( i < infoObject.items.length) {
         if (!this.inventory.includes(infoObject.items[i])) {
-           this.cost.buyItem(infoObject.items[i]);
-           this.inventory.push(infoObject.items[i]);
-           i++;
-         } else{
+          this.cost.buyItem(infoObject.items[i]);
+          this.inventory.push(infoObject.items[i]);
+          i++;
+        } else{
           break; 
-         }
         }
+      }
     } 
   }
 
