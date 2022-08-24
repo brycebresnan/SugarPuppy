@@ -7,9 +7,6 @@ import Simulator from './js/simulator';
 let sim = new Simulator();
 
 
-
-
-
 //create button to see log 
 let logButton = document.getElementById("dispLog");
 logButton.addEventListener("click", () => sim.displayLog());
@@ -22,19 +19,19 @@ acceptButton.addEventListener("click", sim.eventEnd.bind(sim));
 // Get the modal
 const alertModal = document.getElementById("alertModal");
 const introModal = document.getElementById("introModal");
-const score = document.getElementById("score");
+const endModal = document.getElementById("endModal");
 // const clockModal = document.getElementById("clockModal");
 //const span = document.getElementById()
 
 // Get the button that opens the modal
 const alertBtn = document.getElementById("alertBtn");
 const introBtn = document.getElementById("introBtn");
-const scoreBtn = document.getElementById("scoreBtn");
+const endBtn = document.getElementById("endBtn");
 
 // Get the <span> element that closes the modal
 const alertCloseBtn = document.getElementById("alertClose");
 const introCloseBtn = document.getElementById("introClose");
-const scoreCloseBtn = document.getElementById("scoreClose");
+const endCloseBtn = document.getElementById("scoreClose");
 // When the user clicks on the button, open the modal
 alertBtn.onclick = function () {
   alertModal.style.display = "block";
@@ -42,8 +39,8 @@ alertBtn.onclick = function () {
 introBtn.onclick = function () {
   introModal.style.display = "block";
 };
-scoreBtn.onclick = function () {
-  score.style.display = "block";
+endBtn.onclick = function () {
+  endModal.style.display = "block";
 };
 
 // When the user clicks on <span> (x), close the modal
@@ -53,15 +50,15 @@ alertCloseBtn.onclick = function() {
 introCloseBtn.onclick = function () {
   introModal.style.display = "none";
 };
-scoreCloseBtn.onclick = function () {
-  score.style.display = "none";
+endCloseBtn.onclick = function () {
+  endModal.style.display = "none";
 };
 
 // *****************For Modal Alert Testing********************
 window.addEventListener("load", () => {
   introModal.style.display = "block";
   sim.simStart();
-})
+});
 
 // *****************For Testing Timer********************
 // const array = [["16:50",alarm],["16:51",alarm],["16:52",alarm]];
