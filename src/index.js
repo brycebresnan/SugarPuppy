@@ -8,8 +8,8 @@ let sim = new Simulator();
 
 
 //create button to see log 
-let logButton = document.getElementById("dispLog");
-logButton.addEventListener("click", () => sim.displayLog());
+// let logButton = document.getElementById("dispLog");
+// logButton.addEventListener("click", () => sim.displayLog());
 
 let acceptButton = document.getElementById("acceptButton");
 acceptButton.addEventListener("click", sim.eventEnd.bind(sim));
