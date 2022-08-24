@@ -92,7 +92,7 @@ export default class Simulator {
         Score: `${this.score.score}`,
         Cost: `${this.cost.totalCost}`,
         Inventory: `${this.inventory}`,
-      }
+      };
       this.eventLog.push(logObject);
       this.eventHold = null;
     }
@@ -103,18 +103,19 @@ export default class Simulator {
     logElement.innerText =  null;
 
     const ul = document.createElement("ul");
-    console.log(this.eventLog);
+  
     this.eventLog.forEach((item) => {
       Object.keys(item).forEach((key) => {
         const li = document.createElement("li");
         li.append(`${key}: ${item[key]}`);
-        console.log(`${key}: ${item[key]}`);
         ul.append(li);
       });
-    })
-    console.log(ul);
+      const br = document.createElement("br");
+      ul.append(br);
+    });
+    
     logElement.append(ul);
-    // document.getElementById("totalCost").innerText = " " + order.total + " Gold";
+    
   }
 
   eventSkip() {
