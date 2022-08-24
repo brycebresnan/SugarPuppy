@@ -85,10 +85,36 @@ export default class Simulator {
       this.stopWatch.resetWatch();
       
       const timeStamp = new Date(); //could package date better. Little long right now
-      let logArray = [`${timeStamp.toString()}, ${infoObject["eventTitle"]}, Score = ${this.score.score}, 'Cost' = ${this.cost.totalCost}, 'Inventory = ${this.inventory}`]; //find a way to package score
-      this.eventLog.push(logArray);
+      // let logArray = [`${timeStamp.toString()}, ${infoObject["eventTitle"]}, Score = ${this.score.score}, 'Cost' = ${this.cost.totalCost}, 'Inventory = ${this.inventory}`];
+      let logObject = {
+        Time: `${timeStamp.toString()}`,
+        Event: `${infoObject["eventTitle"]}`,
+        Score: `${this.score.score}`,
+        Cost: `${this.cost.totalCost}`,
+        Inventory: `${this.inventory}`,
+      }
+      this.eventLog.push(logObject);
       this.eventHold = null;
     }
+  }
+
+  displayLog() {
+    let logElement = document.getElementById("eventLog");
+    logElement.innerText =  null;
+
+    const ul = document.createElement("ul");
+    console.log(this.eventLog);
+    this.eventLog.forEach((item) => {
+      Object.keys(item).forEach((key) => {
+        const li = document.createElement("li");
+        li.append(`${key}: ${item[key]}`);
+        console.log(`${key}: ${item[key]}`);
+        ul.append(li);
+      });
+    })
+    console.log(ul);
+    logElement.append(ul);
+    // document.getElementById("totalCost").innerText = " " + order.total + " Gold";
   }
 
   eventSkip() {
