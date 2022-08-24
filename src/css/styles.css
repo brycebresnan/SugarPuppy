@@ -1,7 +1,7 @@
 body {
   font-family: Arial, Helvetica, sans-serif;
   background-color: rgb(185, 185, 185);
-  background-image: url('../img/backgr.jpg');
+  background-image: url('../assets/images/backgr.jpg');
   display: flex;
   justify-content: space-between;
   border: solid, blue;
