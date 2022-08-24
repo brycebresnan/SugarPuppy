@@ -51,6 +51,8 @@ export default class Simulator {
 
     document.getElementById("eventText").innerText = infoObject.eventText;//display text
 
+    document.getElementById("eventCost").innerText = null;
+
     if (infoObject.items.length !== 0) {
       let itemsString = infoObject.items.join(", ");
       document.getElementById("eventItems").innerText = `You will need these: ${itemsString}`;
