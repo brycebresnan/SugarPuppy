@@ -4,9 +4,9 @@ import './css/styles.css';
 import Simulator from './js/simulator';
 
 
-
 let sim = new Simulator();
-sim.simStart();
+
+
 
 
 
@@ -23,7 +23,7 @@ acceptButton.addEventListener("click", sim.eventEnd.bind(sim));
 const alertModal = document.getElementById("alertModal");
 const introModal = document.getElementById("introModal");
 const score = document.getElementById("score");
-const clockModal = document.getElementById("clockModal");
+// const clockModal = document.getElementById("clockModal");
 //const span = document.getElementById()
 
 // Get the button that opens the modal
@@ -58,6 +58,10 @@ scoreCloseBtn.onclick = function () {
 };
 
 // *****************For Modal Alert Testing********************
+window.addEventListener("load", () => {
+  introModal.style.display = "block";
+  sim.simStart();
+})
 
 // *****************For Testing Timer********************
 // const array = [["16:50",alarm],["16:51",alarm],["16:52",alarm]];
