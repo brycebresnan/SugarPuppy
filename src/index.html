@@ -14,7 +14,7 @@
     <div id="eventLog"></div> <!-- This is for testing -->
     <button id="alertBtn">Open Alert</button> <!-- This is for testing -->
     <button id="introBtn">Open Intro</button> <!-- This is for testing -->
-    <button id="scoreBtn">Score</button>
+    <button id="endBtn">Open End Screen</button>
   
 
     <!-- The Alert Modal -->
@@ -35,19 +35,6 @@
         <button id="acceptButton">Accept</button>
         <button id="buyButton">Buy Items</button>
       </div>
-    </div>
-  </div>
-
-  <div id="score" class="modal">
-    <div class="modal-content">
-      <div class="modal-head">
-      </div>
-      <div class="modal-body">
-        <samp value="result">Score</samp>
-      </div><div class="modal-foot">
-        <button id="scoreClose" class="close">Close</button>
-      </div>
-      
     </div>
   </div>
 
@@ -78,11 +65,11 @@
                 <input type="text" id="new-user-dog-name" name="new-user-dog-name">
               </li>
               <li>
-                <label for="new-user-dog-age">Dog age</label>
+                <label for="new-user-dog-age">Dog Age:</label>
                 <input type="number" id="new-user-dog-age" name="new-user-dog-age" min="1" max="100" value="18">
               </li>
               <li>
-                <label for="new-user-dog-breed">select Breed</label>
+                <label for="new-user-dog-breed">Select Breed:</label>
                 <select id="dog" name="breed" size="1">
                   <option value="german shepard">German Shepard</option>
                   <option value="golden retriever">Golden Retriever</option>
@@ -101,6 +88,29 @@
         <button id="introClose" class="close">Close</button>
         </div>
       </div>
+    </div>
+  </div>
+
+  <div id="endModal" class="modal">
+    <!-- The End Screen Modal -->
+    <div class="modal-content">
+      <div class="modal-head">
+        <h2>The End!</h2>
+      </div>
+    
+      <div class="modal-body">
+        <p>You have completed our Peti: Dog Simulator! We hope you now have a better idea of the responsibilities of owning a dog. We have assembled an assessment of your performance below. Please be sure to check out our resources page for more information on dog care.
+        </p>
+
+        <h2 id="scoreDisp"><strong>Score:</strong> 95</h2>
+        <h5 id="assesmentDisp"><strong>Excelent job!</strong> You were able to keep up very well with your dog! We did notice you had some trouble getting you dog fed on time, but as long as you are feeding them consistently within a half-hour of the scheduled time, they will be fine. We think if you were to choose to get a real dog, you would be a fantastic caretaker!</h5>
+        <h2 id="costDisp"><strong>Total Cost:</strong> $465.00</h2>
+      </div>
+
+      <div class="modal-foot">
+        <button id="scoreClose" class="close">Close</button>
+      </div>
+      
     </div>
   </div>
 
