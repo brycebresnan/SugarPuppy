@@ -4,7 +4,7 @@ export default class Score {
   }
 
   calculateScore(time){
-    time /= 60;
+    // time /= 60; //disabled for demo
     if (time < 10) {
       return;
     } else if (time > 11 && time < 30) {

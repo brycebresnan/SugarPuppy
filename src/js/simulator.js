@@ -51,12 +51,11 @@ export default class Simulator {
 
     document.getElementById("eventText").innerText = infoObject.eventText;//display text
 
-    //if contains items, display items
-
-    //search for items, if not found, promt user to buy items
-    // if (searchItems(items) === false){buyItems(items)}; 
+    document.getElementById("eventCost").innerText = null;
 
     if (infoObject.items.length !== 0) {
+      let itemsString = infoObject.items.join(", ");
+      document.getElementById("eventItems").innerText = `You will need these: ${itemsString}`;
       let i = 0;
       while( i < infoObject.items.length) {
         if (!this.inventory.includes(infoObject.items[i])) {
@@ -85,15 +84,47 @@ export default class Simulator {
       document.getElementById("eventTitle").innerText = null;//display title
 
       document.getElementById("eventText").innerText = null;//display text
+      
+      document.getElementById("eventItems").innerText = null;
 
       this.score.calculateScore(this.stopWatch.duration);
-      this.stopWatch.resetWatch();
       
       const timeStamp = new Date(); //could package date better. Little long right now
-      let logArray = [`${timeStamp.toString()}, ${infoObject["eventTitle"]}, Score = ${this.score.score}, 'Cost' = ${this.cost.totalCost}, 'Inventory = ${this.inventory}`]; //find a way to package score
-      this.eventLog.push(logArray);
+      // let logArray = [`${timeStamp.toString()}, ${infoObject["eventTitle"]}, Score = ${this.score.score}, 'Cost' = ${this.cost.totalCost}, 'Inventory = ${this.inventory}`];
+      let logObject = {
+        Event: `${infoObject["eventTitle"]}`,
+        Time: `${timeStamp.toString()}`,
+        Stopwatch: `${this.stopWatch.duration}`,
+        Score: `${this.score.score}`,
+        Cost: `${this.cost.totalCost}`,
+        Inventory: `${this.inventory}`,
+      };
+
+      this.stopWatch.resetWatch();
+      this.eventLog.push(logObject);
+      this.displayLog()
       this.eventHold = null;
     }
+  }
+
+  displayLog() {
+    let logElement = document.getElementById("eventLog");
+    logElement.innerText =  null;
+
+    const ul = document.createElement("ul");
+  
+    this.eventLog.forEach((item) => {
+      Object.keys(item).forEach((key) => {
+        const li = document.createElement("li");
+        li.append(`${key}: ${item[key]}`);
+        ul.append(li);
+      });
+      const br = document.createElement("br");
+      ul.append(br);
+    });
+    
+    logElement.append(ul);
+    
   }
 
   eventSkip() {
@@ -104,8 +135,6 @@ export default class Simulator {
     //gets items from infoObject
     //increments cost by item price
     //pushes items to inventory
-
-    //for
   }
 
   createDays() {

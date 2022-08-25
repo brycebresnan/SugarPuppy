@@ -1,27 +1,27 @@
 export default class Event {
   constructor() {
     this.morningWalk = {
-      time:"02:45",
+      time:"19:40",
       random:1,
       chance:100,
       eventTitle:"Morning Walk",
-      eventText:"Description of the event",
+      eventText:"Your dog needs to go out! It's time to take them for a walk.",
       items:["Leash","Collar"]
     };
     this.eveningWalk = {
-      time:"20:21",
+      time:"19:41",
       random:1,
       chance:100,
       eventTitle:"Evening Walk",
-      eventText:"Description of the event",
+      eventText:"Your dog needs to go out! It's time to take them for a walk.",
       items:["Leash","Collar"]
     };
     this.foodMorning = {
-      time:"02:36",
+      time:"19:43",
       random:0,
       chance:100,
       eventTitle:"Time to Eat",
-      eventText:"Description of the event",
+      eventText:"Your dog is hungry! Give them a little breakfast.",
       items:["Bowl","Food"]
     };
     this.foodEvening = {
@@ -37,15 +37,15 @@ export default class Event {
       random:1,
       chance:80,
       eventTitle:"Time to Play!",
-      eventText:"Description of the event",
+      eventText:"Your dog has a lot of energy and wants to play. Consider giving them a chewtoy, but playing fetch would build a stronger bond between you.",
       items:["Chew Toy","Ball"]
     };
     this.visitTheVet = {
       time:"21:16",
       random:0,
       chance:100,
-      eventTitle:"Visit the Vet",
-      eventText:"Description of the event",
+      eventTitle:"Vet Checkup",
+      eventText:"It's time to go for a routine checkup for your dog.",
       items:["Vet Bill"]
     };
     this.sick = {
