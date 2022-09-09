@@ -7,7 +7,7 @@
 * Anthony Gladden <a.gladden360@outlook.com> 
 
 #### Description
-Adopting a dog is a life changing and rewarding experience but it is also an enormous responsibility. Most people have some idea of what it takes to own a dog, but they may not have any actual experience, and as such may lack the foresight required to make sure a dog fits into their life style. In order to help people gain that experience.
+Adopting a dog is a life changing and rewarding experience but it is also an enormous responsibility. Most people have some idea of what it takes to own a dog, but they may not have any actual experience, and as such may lack the foresight required to make sure a dog fits into their life style. In order to help people gain that experience, we have created a new tool: Peti.
  
 This app is designed to be a simulator that allows the user to experience the needs of a dog in order to practice the responsibilities of animal care before committing to adoption. The user inputs some basic biographical information, and the app begins populating events that represent typical dog-related needs. At the end of the simulation, the app will score the user based on the speed of their response to the events, and in addition, it will calculate a total cost of dog ownership for the duration of the simulation.
 
